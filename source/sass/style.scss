@@ -1,8 +1,22 @@
-@import "blocks/variables.scss";
-@import "blocks/fonts.scss";
-@import "blocks/global.scss";
+@import "fonts.scss";
+@import "variables.scss";
+@import "mixin.scss";
+@import "global.scss";
+
+
 @import "blocks/visually-hidden.scss";
 @import "blocks/page-header.scss";
+@import "blocks/site-wrapper.scss";
+@import "blocks/block-wrapper.scss";
+@import "blocks/main-nav.scss";
+@import "blocks/program-select.scss";
+@import "blocks/categories.scss";
+@import "blocks/advantages.scss";
+@import "blocks/before-after.scss";
+@import "blocks/contacts.scss";
+@import "blocks/page-footer.scss";
+
+
 
 
 @import "normalize.scss";

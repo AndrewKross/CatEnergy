@@ -1,0 +1,26 @@
+.advantages {
+  margin-bottom: 42px;
+}
+
+.advantages__header {
+  margin: 0;
+  margin-bottom: 35px;
+
+  @include font($font-secondary, 36px, 36px);
+}
+
+.advantages-list {
+  padding-left: 80px;
+}
+
+.advantages-list__item {
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.advantages-list__advantage {
+  margin: 0;
+
+  @include font ($font-primary);
+}

@@ -1,0 +1,41 @@
+.before-after {
+  padding-top: 30px;
+  min-height: 705px;
+  margin-bottom: 30px;
+
+  background-color: $background-color-secondary;
+}
+
+.before-after__header {
+  margin: 0;
+  margin-bottom: 40px;
+
+  @include font($font-secondary, 36px, 36px);
+}
+
+.before-after__description {
+  margin: 0;
+  margin-bottom: 15px;
+
+  @include font ($font-primary);
+}
+
+.before-after__result {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.before-after__parametr {
+  @include font($font-secondary, 12px, 12px);
+}
+
+.before-after__value {
+  @include font($font-secondary, 24px, 24px);
+}
+
+.before-after__price {
+  margin: 0;
+
+  @include font($font-secondary, 14px, 14px);
+}

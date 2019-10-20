@@ -1,12 +1,9 @@
 body {
   min-width: 320px;
-  font-family: $font-primary;
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 18px;
-
   box-sizing: border-box;
-  background-color: $background-color;
+
+  @include font ($font-primary);
+  background-color: $background-color-primary;
 }
 
 a {
@@ -21,4 +18,12 @@ img {
 
 *, *::before, *::after {
     box-sizing: inherit;
+}
+
+.site-list,
+.advantages__list,
+.social-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }

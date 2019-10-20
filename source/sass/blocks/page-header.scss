@@ -1,3 +1,10 @@
 .page-header {
-    background-color: inherit;
+    min-height: 65px;
+    border-bottom: 1px solid #e6e6e6;
+    padding-top: 11px;
+}
+
+.page-header__block-wrapper {
+  display: flex;
+  justify-content: space-between;
 }

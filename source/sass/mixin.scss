@@ -1,0 +1,17 @@
+@mixin font ($font-family: $font-primary, $font-size: 14px, $line-height: 18px, $font-weight: normal) {
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  font-family: $font-family;
+}
+
+@mixin size ($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin center-inside () {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

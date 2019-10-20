@@ -1,0 +1,22 @@
+.contacts__block-wrapper {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.contacts__header {
+  width: 50%;
+
+  @include font($font-secondary, 16px, 20px);
+  text-transform: uppercase;
+}
+
+.contacts__address {
+  margin: 0;
+  width: 50%;
+
+  @include font($font-primary, 14px, 20px);
+}
+
+.contacts__map {
+  height: 362px; 
+}
