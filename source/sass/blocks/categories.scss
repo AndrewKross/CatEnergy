@@ -1,5 +1,6 @@
 .categories {
   margin-bottom: 30px;
+  @include mobile-padding;
 }
 
 .categories__block {

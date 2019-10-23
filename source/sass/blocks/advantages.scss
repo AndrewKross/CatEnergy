@@ -1,5 +1,6 @@
 .advantages {
   margin-bottom: 42px;
+  @include mobile-padding;
 }
 
 .advantages__header {

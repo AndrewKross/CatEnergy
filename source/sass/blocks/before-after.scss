@@ -2,6 +2,7 @@
   padding-top: 30px;
   min-height: 705px;
   margin-bottom: 30px;
+  @include mobile-padding;
 
   background-color: $background-color-secondary;
 }

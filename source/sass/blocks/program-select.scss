@@ -38,9 +38,11 @@
 }
 
 .program-select__button {
-  display: inline-block;
   @include size (280px, 40px);
-  @include center-inside;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
 
   background-color: #68b738;
   color: white;

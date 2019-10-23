@@ -1,0 +1,5 @@
+.catalog__header {
+  margin: 0;
+
+  @include font ($font-secondary, 36px, 36px);
+}

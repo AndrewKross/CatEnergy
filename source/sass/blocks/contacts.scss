@@ -1,6 +1,7 @@
-.contacts__block-wrapper {
+.contacts__wrapper {
   display: flex;
   margin-bottom: 25px;
+  @include mobile-padding;
 }
 
 .contacts__header {
@@ -18,5 +19,5 @@
 }
 
 .contacts__map {
-  height: 362px; 
+  height: 362px;
 }
