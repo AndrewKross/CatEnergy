@@ -2,7 +2,7 @@ body {
   min-width: 320px;
   box-sizing: border-box;
 
-  @include font ($font-primary);
+  @include font ($font-secondary);
   background-color: $background-color-primary;
 }
 

@@ -1,0 +1,15 @@
+.advantages-list {
+  padding-left: 80px;
+}
+
+.advantages-list__item {
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.advantages-list__advantage {
+  margin: 0;
+
+  @include font ($font-secondary);
+}

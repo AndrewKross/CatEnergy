@@ -1,0 +1,13 @@
+.extra-list__name {
+  @include font ($font-primary, 16px, 16px)
+}
+
+.extra-list__description {
+  @include font ($font-secondary);
+}
+
+.extra-list__buy-button {
+  @include buy-button;
+  @include size (280px, 40px);
+  @include font ($font-primary, 16px, 16px);
+}

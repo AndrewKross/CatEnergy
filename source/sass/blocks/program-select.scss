@@ -1,6 +1,5 @@
 .program-select {
   position: relative;
-  margin-bottom: 22px;
 
     &::before {
       content: "";
@@ -27,25 +26,20 @@
   margin: 0;
   margin-bottom: 20px;
 
-  @include font($font-secondary, 36px, 36px);
+  @include font($font-primary, 36px, 36px);
 }
 
 .program-select__header-small {
   margin: 0;
 
-  @include font ($font-secondary, 14px, 14px);
+  @include font ($font-primary);
   text-transform: uppercase;
 }
 
 .program-select__button {
   @include size (280px, 40px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include buy-button;
   margin: auto;
 
-  background-color: #68b738;
-  color: white;
-  @include font ($font-secondary);
-  text-transform: uppercase;
+  @include font ($font-primary);
 }

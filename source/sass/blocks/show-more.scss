@@ -1,0 +1,35 @@
+.show-more {
+  @include mobile-padding;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.show-more__plus {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.show-more__text-block {
+  margin-bottom: 25px;
+}
+
+.show-more__header {
+  margin: 0;
+  margin-bottom: 10px;
+
+  @include font ($font-primary, 16px, 16px)
+}
+
+.show-more__small-header {
+  @include font ($font-primary, 12px, 16px)
+}
+
+.show-more__show-all {
+  @include buy-button;
+  @include size (280px, 40px);
+
+  @include font ($font-primary, 16px, 16px)
+  background-color: $background-color-secondary;
+  border: none;
+  color: #444444;
+}

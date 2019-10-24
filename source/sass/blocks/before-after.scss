@@ -1,7 +1,6 @@
 .before-after {
   padding-top: 30px;
   min-height: 705px;
-  margin-bottom: 30px;
   @include mobile-padding;
 
   background-color: $background-color-secondary;
@@ -11,14 +10,14 @@
   margin: 0;
   margin-bottom: 40px;
 
-  @include font($font-secondary, 36px, 36px);
+  @include font($font-primary, 36px, 36px);
 }
 
 .before-after__description {
   margin: 0;
   margin-bottom: 15px;
 
-  @include font ($font-primary);
+  @include font ($font-secondary);
 }
 
 .before-after__result {
@@ -28,15 +27,15 @@
 }
 
 .before-after__parametr {
-  @include font($font-secondary, 12px, 12px);
+  @include font($font-primary, 12px, 12px);
 }
 
 .before-after__value {
-  @include font($font-secondary, 24px, 24px);
+  @include font($font-primary, 24px, 24px);
 }
 
 .before-after__price {
   margin: 0;
 
-  @include font($font-secondary, 14px, 14px);
+  @include font($font-primary, 14px, 14px);
 }

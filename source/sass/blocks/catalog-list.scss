@@ -1,0 +1,23 @@
+.catalog-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.catalog-list__item {
+
+}
+
+.catalog-list__name {
+  @include font ($font-primary, 16px, 20px);
+}
+
+.catalog-list__description {
+  @include font ($font-secondary, 12px, 16px);
+}
+
+.catalog-list__buy-button {
+  @include size (280px, 40px);
+  @include font ($font-primary, 16px, 16px);
+  @include buy-button;
+  margin: auto;
+}

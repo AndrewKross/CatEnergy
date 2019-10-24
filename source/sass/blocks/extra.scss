@@ -1,0 +1,22 @@
+.extra {
+  @include mobile-padding;
+  padding-top: 30px;
+  padding-bottom: 35px;
+}
+
+.extra__header {
+  margin: 0;
+  margin-bottom: 30px;
+
+  @include font ($font-primary, 24px, 24px);
+}
+
+.extra__list {
+  margin-bottom: 40px;
+}
+
+.extra__gift {
+  @include size (280px, 289px);
+
+  background-color: green;
+}

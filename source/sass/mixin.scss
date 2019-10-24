@@ -1,4 +1,4 @@
-@mixin font ($font-family: $font-primary, $font-size: 14px, $line-height: 18px, $font-weight: normal) {
+@mixin font ($font-family: $font-secondary, $font-size: 14px, $line-height: 18px, $font-weight: normal) {
   font-weight: $font-weight;
   font-size: $font-size;
   line-height: $line-height;
@@ -13,4 +13,14 @@
 @mixin mobile-padding {
   padding-left: 20px;
   padding-right: 20px;
+}
+
+@mixin buy-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #68b738;
+  color: white;
+  text-transform: uppercase;
 }

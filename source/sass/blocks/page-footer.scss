@@ -15,18 +15,3 @@
 .page-footer__logo-header {
   margin-bottom: 30px;
 }
-
-.social-links {
-  min-height: 62px;
-  display: flex;
-}
-
-.copyright {
-  width: 100%;
-  min-height: 78px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  @include font($font-primary, 16px, 16px);
-}
