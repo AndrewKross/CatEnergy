@@ -17,19 +17,19 @@
   margin: 0;
   margin-bottom: 10px;
 
-  @include font ($font-primary, 16px, 16px)
+  @include font ($font-primary, 16px, 16px);
 }
 
 .show-more__small-header {
-  @include font ($font-primary, 12px, 16px)
+  @include font ($font-primary, 12px, 16px);
+  color: $text-color-light;
 }
 
 .show-more__show-all {
   @include buy-button;
-  @include size (280px, 40px);
 
-  @include font ($font-primary, 16px, 16px)
+  @include font ($font-primary, 16px, 16px);
   background-color: $background-color-secondary;
   border: none;
-  color: #444444;
+  color: $text-color-light;
 }

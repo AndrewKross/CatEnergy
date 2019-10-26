@@ -12,4 +12,5 @@
   margin: 0;
 
   @include font ($font-secondary);
+  color: $text-color-light;
 }

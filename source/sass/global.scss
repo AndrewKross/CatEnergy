@@ -2,8 +2,9 @@ body {
   min-width: 320px;
   box-sizing: border-box;
 
-  @include font ($font-secondary);
+  @include font ();
   background-color: $background-color-primary;
+  color: $text-color-dark;
 }
 
 a {

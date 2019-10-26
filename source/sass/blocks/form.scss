@@ -1,0 +1,42 @@
+.form__fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 0;
+}
+
+.form__label {
+  margin-bottom: 15px;
+
+  @include font ($font-primary, 16px, 18px);
+  color: $text-color-medium;
+  text-transform: uppercase;
+}
+
+.form__name-input::placeholder {
+  color: $text-color-light;
+}
+
+.form__header {
+  @include header-medium;
+  margin-bottom: 30px;
+}
+
+.form__textarea {
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 15px;
+}
+
+.form__fieldset--extra {
+  margin-bottom: 20px;
+}
+
+.form__submit {
+  @include buy-button;
+  border: none;
+  padding: 0;
+  margin-bottom: 20px;
+}

@@ -17,6 +17,7 @@
   width: 50%;
 
   @include font($font-secondary, 14px, 20px);
+  color: $text-color-light;
 }
 
 .contacts__map {

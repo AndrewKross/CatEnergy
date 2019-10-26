@@ -10,7 +10,7 @@
   margin: 0;
   margin-bottom: 40px;
 
-  @include font($font-primary, 36px, 36px);
+  @include header-big;
 }
 
 .before-after__description {
@@ -18,6 +18,7 @@
   margin-bottom: 15px;
 
   @include font ($font-secondary);
+  color: $text-color-light;
 }
 
 .before-after__result {
@@ -28,10 +29,11 @@
 
 .before-after__parametr {
   @include font($font-primary, 12px, 12px);
+  color: $text-color-light;
 }
 
 .before-after__value {
-  @include font($font-primary, 24px, 24px);
+  @include header-medium;
 }
 
 .before-after__price {

@@ -8,7 +8,7 @@
   margin: 0;
   margin-bottom: 30px;
 
-  @include font ($font-primary, 24px, 24px);
+  @include header-medium;
 }
 
 .extra__list {
@@ -19,4 +19,8 @@
   @include size (280px, 289px);
 
   background-color: green;
+}
+
+.extra__gift-text {
+  color: white;
 }

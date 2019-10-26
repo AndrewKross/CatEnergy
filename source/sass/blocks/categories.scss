@@ -14,7 +14,7 @@
   margin: 0;
   margin-bottom: 30px;
 
-  @include font ($font-primary, 24px, 24px);
+  @include header-medium;
   text-transform: uppercase;
   text-align: center;
 }
@@ -22,10 +22,12 @@
 .categories__description {
   margin: 0;
   margin-bottom: 20px;
+  padding: 0;
   padding-bottom: 20px;
   border-bottom: 1px solid #d9d9d9;
 
   @include font ($font-secondary);
+  color: $text-color-light;
 }
 
 .categories__link {

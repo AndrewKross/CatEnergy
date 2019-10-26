@@ -26,18 +26,18 @@
   margin: 0;
   margin-bottom: 20px;
 
-  @include font($font-primary, 36px, 36px);
+  @include header-big;
+  color: white;
 }
 
 .program-select__header-small {
   margin: 0;
 
-  @include font ($font-primary);
+  @include font ();
   text-transform: uppercase;
 }
 
 .program-select__button {
-  @include size (280px, 40px);
   @include buy-button;
   margin: auto;
 

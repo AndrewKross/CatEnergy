@@ -1,13 +1,15 @@
 .extra-list__name {
-  @include font ($font-primary, 16px, 16px)
+  @include font ($font-primary, 16px, 16px);
+  color: $text-color-medium;
 }
 
 .extra-list__description {
   @include font ($font-secondary);
+  color: $text-color-light;
 }
 
 .extra-list__buy-button {
   @include buy-button;
-  @include size (280px, 40px);
   @include font ($font-primary, 16px, 16px);
+  margin-bottom: 17px;
 }
