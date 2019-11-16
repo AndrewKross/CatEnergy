@@ -1,3 +1,7 @@
+.extra-list {
+  @include reset-list;
+}
+
 .extra-list__name {
   @include font ($font-primary, 16px, 16px);
   color: $text-color-medium;

@@ -1,0 +1,22 @@
+.site-list {
+  @include reset-list;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-list__item {
+  @include size (100%, 65px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include font ($font-primary, 20px, 20px, 500);
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.site-list__link {
+  @include size (100%, 65px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,6 +1,7 @@
 .catalog-list {
   display: flex;
   flex-direction: column;
+  @include reset-list;
 }
 
 .catalog-list__item {

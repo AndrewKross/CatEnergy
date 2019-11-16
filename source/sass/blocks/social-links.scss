@@ -1,4 +1,5 @@
 .social-links {
+  @include reset-list;
   min-height: 62px;
   display: flex;
 }

@@ -1,5 +1,6 @@
 .advantages-list {
   padding-left: 80px;
+  @include reset-list;
 }
 
 .advantages-list__item {

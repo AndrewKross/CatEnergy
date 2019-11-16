@@ -2,7 +2,7 @@ body {
   min-width: 320px;
   box-sizing: border-box;
 
-  @include font ();
+  @include font;
   background-color: $background-color-primary;
   color: $text-color-dark;
 }
@@ -19,14 +19,4 @@ img {
 
 *, *::before, *::after {
     box-sizing: inherit;
-}
-
-.site-list,
-.advantages__list,
-.social-links,
-.catalog-list,
-.extra-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
