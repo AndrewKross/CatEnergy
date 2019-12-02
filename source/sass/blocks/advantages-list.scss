@@ -1,6 +1,6 @@
 .advantages-list {
-  padding-left: 80px;
   @include reset-list;
+  padding-left: 80px;
 }
 
 .advantages-list__item {
@@ -14,4 +14,32 @@
 
   @include font ($font-secondary);
   color: $text-color-light;
+}
+
+@media (min-width: $tablet-width) {
+  .advantages-list {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 600px;
+    align-content: space-between;
+  }
+
+  .advantages-list__item {
+    width: 50%;
+    min-height: 285px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .advantages-list {
+    flex-wrap: nowrap;
+    min-height: 230px;
+    justify-content: space-between;
+  }
+
+  .advantages-list__item {
+    width: 20%;
+    min-height: 230px;
+  }
 }

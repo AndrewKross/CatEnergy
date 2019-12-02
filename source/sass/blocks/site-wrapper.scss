@@ -2,3 +2,15 @@
     width: 320px;
     margin: auto;
 }
+
+@media (min-width: $tablet-width) {
+  .site-wrapper {
+      width: $tablet-width;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .site-wrapper {
+      width: $desktop-width;
+  }
+}

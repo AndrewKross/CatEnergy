@@ -26,10 +26,10 @@
 }
 
 .show-more__show-all {
-  @include buy-button;
+  @include mobile-button;
 
   @include font ($font-primary, 16px, 16px);
-  background-color: $background-color-secondary;
+  background-color: #f2f2f2;
   border: none;
   color: $text-color-light;
 }

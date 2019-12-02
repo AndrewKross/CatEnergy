@@ -8,7 +8,7 @@
   margin: 0;
   margin-bottom: 30px;
 
-  @include header-medium;
+  @include font ($font-primary, 24px, 24px);
 }
 
 .extra__list {

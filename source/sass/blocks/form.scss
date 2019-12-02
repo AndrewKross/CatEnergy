@@ -20,7 +20,7 @@
 }
 
 .form__header {
-  @include header-medium;
+  @include font ($font-primary, 24px, 24px);
   margin-bottom: 30px;
 }
 
@@ -35,7 +35,7 @@
 }
 
 .form__submit {
-  @include buy-button;
+  @include mobile-button;
   border: none;
   padding: 0;
   margin-bottom: 20px;

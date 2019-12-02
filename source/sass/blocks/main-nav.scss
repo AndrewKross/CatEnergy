@@ -9,3 +9,20 @@
     border: none;
     margin-left: auto;
 }
+
+@media (min-width: $tablet-width) {
+  .main-nav__toggle {
+    display: none;
+  }
+
+  .main-nav {
+    width: 440px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .main-nav {
+    width: 480px;
+    position: relative;
+  }
+}

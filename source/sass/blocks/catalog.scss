@@ -7,5 +7,31 @@
   margin: 0;
   margin-bottom: 40px;
 
-  @include header-big;
+  @include font ($font-primary, 36px, 36px);
+}
+
+@media (min-width: $tablet-width) {
+  .catalog {
+    @include tablet-padding;
+    padding-top: 65px;
+  }
+
+  .catalog__header {
+    margin-bottom: 155px;
+
+    @include font ($font-primary, 60px, 60px);
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .catalog {
+    @include desktop-padding;
+    padding-top: 85px;
+  }
+
+  .catalog__header {
+    margin-bottom: 160px;
+
+    @include font ($font-primary, 60px, 60px);
+  }
 }

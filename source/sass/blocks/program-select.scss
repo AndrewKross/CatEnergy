@@ -1,6 +1,5 @@
 .program-select {
   position: relative;
-
     &::before {
       content: "";
       position: absolute;
@@ -26,20 +25,97 @@
   margin: 0;
   margin-bottom: 20px;
 
-  @include header-big;
+  @include font ($font-primary, 36px, 36px);
   color: white;
 }
 
 .program-select__header-small {
   margin: 0;
 
-  @include font ();
   text-transform: uppercase;
 }
 
 .program-select__button {
-  @include buy-button;
+  @include mobile-button;
   margin: auto;
 
   @include font ($font-primary);
+}
+
+@media (min-width: $tablet-width) {
+  .program-select {
+    min-height: 870px;
+
+    &::before {
+      @include size (709px, 609px);
+      background: url("../img/index-can-tablet@1x.jpg") no-repeat;
+      bottom: 0;
+      left: 30px;
+    }
+  }
+
+  .program-select__background-wrapper {
+    @include size (auto, auto);
+    margin: 0;
+    padding: 60px 230px 0 120px;
+    min-height: 180px;
+    margin-bottom: 50px;
+
+    text-align: left;
+    background: none;
+    color: $text-color-main;
+  }
+
+  .program-select__button {
+    margin: 0;
+    margin-left: 120px;
+    position: relative;
+    @include size (245px, 52px);
+    @include font ($font-primary, 20px, 20px);
+  }
+
+  .program-select__header {
+    @include font ($font-primary, 60px, 60px);
+    color: $text-color-main;
+    margin-bottom: 45px;
+  }
+
+  .program-select__header-small {
+    @include font ($font-primary, 20px, 20px);
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .program-select {
+      min-height: 583px;
+
+        &::before {
+          @include size (552px, 499px);
+          background: url("../img/index-can-desktop@1x.png") no-repeat;
+          position: absolute;
+          top: 30px;
+          left: 560px;
+          z-index: 1;
+        }
+
+        &::after {
+          content: "";
+          background: url("../img/index-background-desktop@1x.jpg") no-repeat,
+                      green;
+          @include size (720px, 696px);
+          position: absolute;
+          z-index: 0;
+          top: -113px;
+          right: 0;
+        }
+  }
+
+  .program-select__background-wrapper {
+    padding: 115px 720px 0 190px;
+  }
+
+  .program-select__button {
+    margin: 0;
+    margin-left: 190px;
+  }
 }

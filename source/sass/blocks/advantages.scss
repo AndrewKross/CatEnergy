@@ -6,5 +6,29 @@
   margin: 0;
   margin-bottom: 35px;
 
-  @include header-big;
+  @include font ($font-primary, 36px, 36px);
+}
+
+@media (min-width: $tablet-width) {
+  .advantages {
+    @include tablet-padding;
+    border-bottom: 1px solid #e6e6e6;
+  }
+
+  .advantages__header {
+    margin-bottom: 60px;
+
+    @include font ($font-primary, 60px, 60px);
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .advantages {
+    @include desktop-padding;
+    border-bottom: none;
+  }
+
+  .advantages__header {
+    margin-bottom: 75px;
+  }
 }

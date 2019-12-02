@@ -9,3 +9,31 @@
 .page-main__advantages {
   margin-bottom: 40px;
 }
+
+@media (min-width: $tablet-width) {
+  .page-main__program-select {
+    margin-bottom: 0;
+  }
+
+  .page-main__categories {
+    margin-bottom: 50px;
+  }
+
+  .page-main__advantages {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .page-main__program-select {
+    margin-bottom: 80px;
+  }
+
+  .page-main__categories {
+    margin-bottom: 80px;
+  }
+
+  .page-main__advantages {
+    margin-bottom: 90px;
+  }
+}

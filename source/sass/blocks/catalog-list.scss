@@ -19,7 +19,7 @@
 
 .catalog-list__buy-button {
   @include font ($font-primary, 16px, 16px);
-  @include buy-button;
+  @include mobile-button;
   margin: auto;
   margin-bottom: 24px;
 }

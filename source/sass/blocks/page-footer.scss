@@ -9,9 +9,21 @@
   padding-top: 40px;
   @include mobile-padding;
 
-  background-color: $background-color-secondary;
+  background-color: #f2f2f2;
 }
 
 .page-footer__logo-header {
   margin-bottom: 30px;
+}
+
+@media (min-width: $tablet-width) {
+  .page-footer__wrapper {
+    min-height: 150px;
+    padding-top: 0;
+    @include tablet-padding;
+    flex-direction: row;
+    justify-content: space-between;
+
+    background-color: #f2f2f2;
+  }
 }

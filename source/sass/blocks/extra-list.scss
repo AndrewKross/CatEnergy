@@ -13,7 +13,7 @@
 }
 
 .extra-list__buy-button {
-  @include buy-button;
+  @include mobile-button;
   @include font ($font-primary, 16px, 16px);
   margin-bottom: 17px;
 }

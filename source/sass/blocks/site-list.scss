@@ -19,4 +19,36 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  text-transform: uppercase;
+}
+
+@media (min-width: $tablet-width) {
+  .site-list {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 20px;
+  }
+
+  .site-list__item {
+    @include size (auto, auto);
+    border-bottom: none;
+    @include font ($font-primary, 18px, 25px);
+  }
+
+  .site-list__link {
+    @include size (100%, auto);
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .site-list__item {
+    @include font ($font-primary, 20px, 25px);
+    color: white;
+  }
+
+  .site-list {
+    position: relative;
+    z-index: 1;
+  }
 }

@@ -8,7 +8,7 @@
   margin: 0;
   margin-bottom: 35px;
 
-  @include header-big;
+  @include font ($font-primary, 36px, 36px);
 }
 
 .form-section__header-small {
@@ -17,6 +17,6 @@
   padding-right: 50px;
 
   @include font ();
-  color: $text-color-dark;
+  color: $text-color-main;
   text-transform: uppercase;
 }
