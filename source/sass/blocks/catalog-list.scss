@@ -4,10 +4,6 @@
   @include reset-list;
 }
 
-.catalog-list__item {
-
-}
-
 .catalog-list__name {
   @include font ($font-primary, 16px, 20px);
 }
@@ -20,6 +16,29 @@
 .catalog-list__buy-button {
   @include font ($font-primary, 16px, 16px);
   @include mobile-button;
-  margin: auto;
-  margin-bottom: 24px;
+  margin: auto auto 24px;
+}
+@media (min-width: $tablet-width) {
+  .catalog-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .catalog-list__item {
+    width: 324px;
+    min-height: 430px;
+    margin-bottom: 140px;
+
+    &--last {
+      margin-bottom: 0;
+    }
+  }
+}
+@media (min-width: $desktop-width) {
+  .catalog-list__item {
+    width: 245px;
+    margin-bottom: 0;
+    margin-top: 140px;
+  }
 }

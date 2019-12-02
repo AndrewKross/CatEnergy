@@ -17,3 +17,17 @@
   @include font ($font-primary, 16px, 16px);
   margin-bottom: 17px;
 }
+@media (min-width: $tablet-width) {
+  .extra-list__item {
+    min-height: 138px;
+  }
+}
+@media (min-width: $desktop-width) {
+  .extra-list {
+    min-width: 895px;
+  }
+
+  .extra-list__item {
+    min-height: 71px;
+  }
+}

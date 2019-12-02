@@ -9,7 +9,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   @include font ($font-primary, 20px, 20px, 500);
   border-bottom: 1px solid #e6e6e6;
 }
@@ -19,10 +18,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   text-transform: uppercase;
 }
-
 @media (min-width: $tablet-width) {
   .site-list {
     flex-direction: row;
@@ -40,10 +37,12 @@
     @include size (100%, auto);
   }
 }
-
 @media (min-width: $desktop-width) {
   .site-list__item {
     @include font ($font-primary, 20px, 25px);
+  }
+
+  .site-list--index {
     color: white;
   }
 
