@@ -87,24 +87,29 @@
         </ol>
       </section>
 
-      <section class="before-after">
-        <h2 class="before-after__header">Живой пример</h2>
-        <p class="before-after__description">Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов
-          в
-          день.</p>
-        <dl class="before-after__result">
-          <div class="before-after__result-wrapper">
-            <dt class="before-after__parametr">снижение веса</dt>
-            <dd class="before-after__value">5 кг</dd>
-          </div>
-          <div class="before-after__result-wrapper">
-            <dt class="before-after__parametr">затрачено времени</dt>
-            <dd class="before-after__value">60 дней</dd>
-          </div>
-        </dl>
-        <p class="before-after__price">Затраты на питание: 15 000 руб.</p>
-        <p class="before-after__before">Было/Стало</p>
-        <img class="before-after__before-image" src="http://placehold.it/280x230" alt="Было" width="280" height="230">
+      <section class="example">
+        <div class="example__wrapper">
+          <h2 class="example__header">Живой пример</h2>
+          <p class="example__description">Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов
+            в
+            день.</p>
+          <dl class="example__result">
+            <div class="example__result-wrapper example__result-wrapper--left">
+              <dt class="example__parametr">снижение веса</dt>
+              <dd class="example__value">5 кг</dd>
+            </div>
+            <div class="example__result-wrapper example__result-wrapper--right">
+              <dt class="example__parametr">затрачено времени</dt>
+              <dd class="example__value">60 дней</dd>
+            </div>
+          </dl>
+          <p class="example__price">Затраты на питание: 15 000 руб.</p>
+        </div>
+        <div class="example__img-wrapper">
+          <img class="example__img example__img--before" src="../img/before-mobile@1x.png" alt="Было" width="320" height="240">
+          <img class="example__img example__img--after" src="../img/after-mobile@1x.png" alt="Было" width="320" height="240">
+        </div>
+        <p class="example__before-after">Было/Стало</p>
       </section>
 
       <footer class="page-footer">
@@ -112,22 +117,23 @@
         <section class="contacts">
           <div class="contacts__wrapper">
             <h2 class="visually-hidden">Наши контакты</h2>
-            <b class="contacts__header">Приглашаем <br>к сотрудничеству дилеров!</b>
-            <p class="contacts__address">ул. Большая Конюшенная, д. 19/8 Санкт-Петербург</p>
+            <b class="contacts__header">Приглашаем <br class="contacts__mobile-only">
+              <span></span> к сотрудничеству дилеров!</b>
+            <p class="contacts__address">ул. Большая Конюшенная, <span>д. 19/8</span> <br> Санкт-Петербург</p>
           </div>
           <h3 class="visually-hidden">Как к нам проехать</h3>
           <div class="contacts__map">
             <picture>
-              <source media="(min-width: 1440px)" srcset="http://placehold.it/768x396">
-              <source media="(min-width: 768px)" srcset="http://placehold.it/768x396">
-              <img class="contacts__map-image" src="http://placehold.it/320x362" alt="Как к нам проехать" width="320" height="362">
+              <source media="(min-width: 769px)" srcset="../img/bg-map-desktop@1x.png">
+              <source media="(min-width: 321px)" srcset="../img/bg-map-tablet@1x.png">
+              <img class="contacts__map-image" src="../img/bg-map-mobile@1x.png" alt="Как к нам проехать">
             </picture>
           </div>
         </section>
 
         <div class="page-footer__wrapper">
           <a class="page-footer__logo-header">
-            <img class="logo-header__image" src="http://placehold.it/101x18" alt="Кэт Энерджи" width="101" height="18">
+            <img class="logo-header__image" src="../img/logo-footer.svg" alt="Кэт Энерджи" width="128" height="24">
           </a>
           <h3 class="visually-hidden">Мы в соцсетях</h3>
           <ul class="page-footer__social-links social-links">
@@ -142,8 +148,10 @@
             </li>
           </ul>
           <div class="copyright">
-            <a href="#">HTML Academy</a>
-            <img src="http://placehold.it/27x34" alt="Логотип Академии" width="27" height="34">
+            <a href="https://htmlacademy.ru"><img src="../img/htmlacademy.svg" alt="Логотип Академии" width="27" height="34"></a>
+            <span class="copyright__designer">Дизайн: <br class="copyright__mobile-only"> <a href="https://htmlacademy.ru">HTML Academy</a></span>
+
+            <span class="copyright__creator">Разработка: <a href="https://github.com/AndrewKross" href="#">Andrew Kross</a></span>
           </div>
         </div>
 

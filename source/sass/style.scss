@@ -2,19 +2,17 @@
 @import "variables.scss";
 @import "mixin.scss";
 @import "global.scss";
-
-
 @import "blocks/visually-hidden.scss";
 @import "blocks/page-header.scss";
 @import "blocks/page-main.scss";
-@import "blocks/site-wrapper.scss";
 @import "blocks/main-nav.scss";
 @import "blocks/site-list.scss";
+@import "blocks/site-wrapper.scss";
 @import "blocks/program-select.scss";
 @import "blocks/categories.scss";
 @import "blocks/advantages.scss";
 @import "blocks/advantages-list.scss";
-@import "blocks/before-after.scss";
+@import "blocks/example.scss";
 @import "blocks/contacts.scss";
 @import "blocks/social-links.scss";
 @import "blocks/copyright.scss";
@@ -26,7 +24,4 @@
 @import "blocks/extra-list.scss";
 @import "blocks/form-section.scss";
 @import "blocks/form.scss";
-
-
-
 @import "normalize.scss";

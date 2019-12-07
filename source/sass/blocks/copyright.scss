@@ -2,11 +2,32 @@
   width: 100%;
   min-height: 78px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 
-  @include font ($font-secondary, 16px, 16px);
+  @include font($font-secondary, 14px, 16px);
   color: $text-color-light;
+}
+
+.copyright__creator {
+  margin-left: auto;
+  text-align: right;
+  width: 40%;
+}
+
+.copyright__creator a,
+.copyright__designer a {
+  text-decoration: underline;
+  white-space: nowrap;
+}
+
+.copyright__designer {
+  width: 40%;
+}
+
+@media (min-width: 440px) {
+  .copyright__mobile-only {
+    display: none;
+  }
 }
 
 @media (min-width: $tablet-width) {

@@ -1,4 +1,4 @@
-.site-wrapper {
+/*.site-wrapper {
     width: 320px;
     margin: auto;
 }
@@ -7,10 +7,10 @@
   .site-wrapper {
       width: $tablet-width;
   }
-}
-
+}*/
 @media (min-width: $desktop-width) {
   .site-wrapper {
-      width: $desktop-width;
+    width: $desktop-width;
+    margin: auto;
   }
 }

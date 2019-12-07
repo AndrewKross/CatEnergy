@@ -1,0 +1,124 @@
+.example {
+  padding-top: 30px;
+  background-color: #f2f2f2;
+}
+
+.example__wrapper {
+  @include mobile-padding;
+}
+
+.example__header {
+  margin: 0;
+  margin-bottom: 40px;
+  @include font($font-primary, 36px, 36px);
+}
+
+.example__description {
+  margin: 0;
+  margin-bottom: 30px;
+  @include font($font-secondary);
+  color: $text-color-light;
+}
+
+.example__result {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.example__result-wrapper {
+  width: 124px;
+  height: 56px;
+  border: 1px solid #cdcdcd;
+  border-radius: 2px;
+  position: relative;
+}
+
+.example__result-wrapper--left {
+  margin-right: 32px;
+}
+
+.example__parametr {
+  width: 87px;
+  position: absolute;
+  bottom: -15px;
+  left: 18px;
+  padding: 0 15px;
+  text-align: center;
+
+  background-color: #f2f2f2;
+  @include font($font-primary, 12px, 12px);
+  color: $text-color-light;
+}
+
+.example__value {
+  margin: 0;
+  display: inline-block;
+  width: 124px;
+  height: 56px;
+  text-align: center;
+  padding-top: 14px;
+  text-transform: uppercase;
+  @include font($font-primary, 24px, 24px);
+}
+
+.example__price {
+  margin: 0;
+  @include font($font-primary, 14px, 14px);
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 45px;
+}
+
+.example__img-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 240px;
+}
+
+.example__img {
+  margin-bottom: 35px;
+  position: absolute;
+  top: 0;
+}
+
+.example__img--after {
+  display: none;
+}
+
+.example__before-after {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+  padding-top: 35px;
+  padding-bottom: 40px;
+  @include font($font-primary, 16px, 16px);
+}
+
+@media (min-width: $tablet-width) {
+  .example {
+    padding-top: 50px;
+    @include tablet-padding;
+    min-height: 1080px;
+    background-color: white;
+  }
+
+  .example__header {
+    margin-bottom: 70px;
+    @include font($font-primary, 60px, 60px);
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .example {
+    padding-top: 0;
+    @include desktop-padding;
+    min-height: 590px;
+    background-color: white;
+  }
+}

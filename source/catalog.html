@@ -263,18 +263,23 @@
         <section class="contacts contacts--darker">
           <div class="contacts__wrapper">
             <h2 class="visually-hidden">Наши контакты</h2>
-            <b class="contacts__header">Приглашаем <br>к сотрудничеству дилеров!</b>
-            <p class="contacts__address">ул. Большая Конюшенная, д. 19/8 Санкт-Петербург</p>
+            <b class="contacts__header">Приглашаем <br class="only-mobile">
+              <span></span> к сотрудничеству дилеров!</b>
+            <p class="contacts__address">ул. Большая Конюшенная, д. 19/8 <br> Санкт-Петербург</p>
           </div>
           <h3 class="visually-hidden">Как к нам проехать</h3>
           <div class="contacts__map">
-            <img class="contacts__map-image" src="http://placehold.it/320x362" alt="Как к нам проехать" width="320" height="362">
+            <picture>
+              <source media="(min-width: 769px)" srcset="../img/bg-map-desktop@1x.png">
+              <source media="(min-width: 321px)" srcset="../img/bg-map-tablet@1x.png">
+              <img class="contacts__map-image" src="../img/bg-map-mobile@1x.png" alt="Как к нам проехать">
+            </picture>
           </div>
         </section>
 
         <div class="page-footer__wrapper">
-          <a class="page-footer__logo-header">
-            <img class="logo-header__image" src="http://placehold.it/101x18" alt="Кэт Энерджи" width="101" height="18">
+          <a class="page-footer__logo-header" href="index.html">
+            <img class="logo-header__image" src="../img/logo-footer.svg" alt="Кэт Энерджи" width="101" height="18">
           </a>
           <h3 class="visually-hidden">Мы в соцсетях</h3>
           <ul class="page-footer__social-links social-links">

@@ -1,5 +1,32 @@
 .social-links {
   @include reset-list;
-  min-height: 62px;
+  width: 100%;
+  min-height: 64px;
+  padding: 0 26.8%;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.social-links__item--vk {
+  width: 22px;
+  height: 12px;
+  font-size: 0;
+  background: url("../img/icon-vk.svg") no-repeat center;
+}
+
+.social-links__item--instagram {
+  width: 22px;
+  height: 12px;
+  font-size: 0;
+  background: url("../img/icon-insta.svg") no-repeat center;
+}
+
+.social-links__item--facebook {
+  width: 22px;
+  height: 12px;
+  font-size: 0;
+  background: url("../img/icon-fb.svg") no-repeat center;
 }

@@ -4,38 +4,31 @@
   line-height: $line-height;
   font-family: $font-family;
 }
-
 @mixin size ($width, $height) {
   width: $width;
   height: $height;
 }
-
 @mixin mobile-padding {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 6.25%;
+  padding-right: 6.25%;
 }
-
 @mixin tablet-padding {
   padding-left: 30px;
   padding-right: 30px;
 }
-
 @mixin desktop-padding {
   padding-left: 110px;
   padding-right: 110px;
 }
-
 @mixin mobile-button {
   display: flex;
   align-items: center;
   justify-content: center;
   @include size (280px, 40px);
-
   background-color: #68b738;
   color: white;
   text-transform: uppercase;
 }
-
 @mixin reset-list {
   list-style: none;
   margin: 0;
