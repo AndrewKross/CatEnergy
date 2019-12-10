@@ -4,7 +4,7 @@
 
 .program-select__background-wrapper {
   min-height: 305px;
-  padding-top: 35px;
+  padding-top: 30px;
   text-align: center;
   margin-bottom: 135px;
   background: url("../img/index-background-mobile@1x.jpg") no-repeat center,
@@ -14,7 +14,7 @@
 }
 
 .program-select__header {
-  margin: 0 0 20px;
+  margin: 0 0 18px;
   @include font($font-primary, 36px, 36px);
   color: white;
 }
@@ -26,6 +26,7 @@
 
 .program-select__button {
   @include mobile-button;
+  width: 87.5%;
   margin: auto;
   @include font($font-primary);
 

@@ -1,12 +1,13 @@
 .catalog {
-  @include mobile-padding;
   padding-top: 30px;
 }
 
 .catalog__header {
   margin: 0 0 40px;
-  @include font ($font-primary, 36px, 36px);
+  @include mobile-padding;
+  @include font($font-primary, 36px, 36px);
 }
+
 @media (min-width: $tablet-width) {
   .catalog {
     @include tablet-padding;
@@ -15,9 +16,10 @@
 
   .catalog__header {
     margin-bottom: 155px;
-    @include font ($font-primary, 60px, 60px);
+    @include font($font-primary, 60px, 60px);
   }
 }
+
 @media (min-width: $desktop-width) {
   .catalog {
     @include desktop-padding;

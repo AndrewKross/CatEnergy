@@ -7,7 +7,7 @@
 }
 
 .contacts__header {
-  width: 49%;
+  width: 138px;
 
   @include font($font-primary, 16px, 20px);
   text-transform: uppercase;
@@ -16,7 +16,7 @@
 
 .contacts__address {
   margin: 0;
-  width: 49%;
+  width: 138px;
   text-align: right;
 
   @include font($font-secondary, 14px, 20px);
@@ -54,16 +54,8 @@
 }
 
 @media (min-width: 321px) {
-  .contacts__mobile-only {
-    display: none;
-  }
-
   .contacts__map::before {
     display: none;
-  }
-
-  .contacts__header {
-    padding-right: 30px;
   }
 }
 

@@ -13,7 +13,7 @@
 
 .categories__header {
   margin: 0 0 30px;
-  @include font ($font-primary, 24px, 24px);
+  @include font($font-primary, 24px, 24px);
   text-transform: uppercase;
   position: relative;
   padding-left: 70px;
@@ -37,7 +37,7 @@
   position: absolute;
   left: 8px;
   top: -12px;
-  @include size (35px, 49px);
+  @include size(35px, 49px);
   background: url("../img/icon-cat-slim.svg") no-repeat;
 }
 
@@ -46,7 +46,7 @@
   position: absolute;
   left: -10px;
   top: 0;
-  @include size (67px, 28px);
+  @include size(67px, 28px);
   background: url("../img/icon-cat-pro.svg") no-repeat;
 }
 
@@ -54,19 +54,19 @@
   margin: 0 0 20px;
   padding: 0 0 20px;
   border-bottom: 1px solid #d9d9d9;
-  @include font ($font-secondary);
+  @include font($font-secondary);
   color: $text-color-light;
 }
 
 .categories__link {
-  @include font ($font-primary, 16px, 16px);
+  @include font($font-primary, 16px, 16px);
   text-transform: uppercase;
   align-self: flex-start;
   position: relative;
 
   &::before {
     content: "";
-    @include size (24px, 11px);
+    @include size(24px, 11px);
     position: absolute;
     background: url("../img/icon-right-arrow-long.svg") no-repeat;
     right: -36px;

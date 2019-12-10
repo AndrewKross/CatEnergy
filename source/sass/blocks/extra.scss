@@ -1,27 +1,62 @@
 .extra {
-  @include mobile-padding;
   padding-top: 30px;
   padding-bottom: 35px;
 }
 
 .extra__header {
-  margin: 0 0 30px;
-  @include font ($font-primary, 24px, 24px);
+  margin: 0;
+  @include font($font-primary, 24px, 24px);
+  margin-right: 7.5%;
+  flex-shrink: 0;
+  padding-left: 6.25%;
+}
+
+.extra__header-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  white-space: nowrap;
+}
+
+.extra__header-line {
+  width: 100%;
+  height: 3px;
+  background-color: #68b738;
+  position: relative;
+  top: 4px;
 }
 
 .extra__list {
+  @include reset-list;
   margin-bottom: 40px;
 }
 
 .extra__gift {
-  @include size (280px, 289px);
-  background-color: green;
+  height: 289px;
+  padding: 190px 55px 40px 55px;
+  background: url("../img/gift-photo-mobile@1x.jpg") no-repeat center, green;
+  background-size: cover;
+  text-align: center;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 55px;
+    height: 60px;
+    position: absolute;
+    background: url("../img/icon-gift.svg") no-repeat center;
+    top: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .extra__gift-text {
   margin: 0;
   color: white;
+  @include font($font-secondary, 16px, 20px);
 }
+
 @media (min-width: $tablet-width) {
   .extra {
     @include tablet-padding;
@@ -31,11 +66,11 @@
 
   .extra__header {
     margin-bottom: 75px;
-    @include font ($font-primary, 36px, 36px);
+    @include font($font-primary, 36px, 36px);
   }
 
   .extra__gift {
-    @include size (100%, 200px);
+    @include size(100%, 200px);
     margin-top: 70px;
   }
 }
@@ -47,7 +82,7 @@
   }
 
   .extra__gift {
-    @include size (245px, 289px);
+    @include size(245px, 289px);
     margin-top: 0;
   }
 

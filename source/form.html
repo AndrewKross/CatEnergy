@@ -50,58 +50,66 @@
         <form class="form-section__form form" action="index.html" method="post">
 
           <fieldset class="form__fieldset form__fieldset--name">
-            <label class="form__label">Имя:*
-              <input class="form__name-input" type="name" name="form__input--name" value="" placeholder="Барсик">
+            <label class="form__label"><span>Имя:*</span>
+              <input class="form__name-input" type="text" name="form__input--name" value="" placeholder="Барсик">
             </label>
-            <label class="form__label">Вес (кг):*
-              <input class="form__name-input" type="name" name="form__input--weight" value="" placeholder="7">
+            <label class="form__label"><span>Вес (кг):*</span>
+              <input class="form__name-input" type="text" name="form__input--weight" value="" placeholder="7">
             </label>
-            <label class="form__label">Возраст (лет):
-              <input class="form__name-input" type="name" name="form__input--age" value="" placeholder="7">
+            <label class="form__label"><span>Возраст (лет):</span>
+              <input class="form__name-input" type="text" name="form__input--age" value="" placeholder="7">
             </label>
           </fieldset>
 
           <fieldset class="form__fieldset form__fieldset--radio">
-            <label class="form__label">
-              <input class="form__radio-input" type="radio" name="form__radio-input" value="">Похудение
+            <input class="form__radio-input visually-hidden" id="radio-one" type="radio" name="form__radio-input" value="" checked>
+            <label class="form__label form__label--radio" for="radio-one">Похудение
             </label>
-            <label class="form__label">
-              <input class="form__radio-input" type="radio" name="form__radio-input" value="">Набор массы
+            <input class="form__radio-input  visually-hidden" id="radio-two" type="radio" name="form__radio-input" value="">
+            <label class="form__label form__label--radio" for="radio-two">Набор массы
             </label>
-            <label class="form__label">
-              <input class="form__radio-input" type="radio" name="form__radio-input" value="">Не знаю (Нужен ваш совет)
+            <input class="form__radio-input  visually-hidden" id="radio-three" type="radio" name="form__radio-input" value="">
+            <label class="form__label form__label--radio" for="radio-three">Не знаю (Нужен ваш совет)
             </label>
           </fieldset>
 
-          <fieldset class="form__fieldset form__fieldset--feedback">
-            <legend class="form__header">Контактные данные (владельца кота)</legend>
-            <label class="form__label">E-mail:*
-              <input class="form__name-input" type="text" name="form__name-input--email" value="" placeholder="kuklachev@gmail.com">
+          <fieldset class="form__fieldset form__fieldset--contacts">
+            <div class="form__header-wrapper">
+              <h2 class="form__header">Контактные данные <br> (владельца кота)</h2>
+              <span class="form__header-line form__header-line--contacts"></span>
+            </div>
+            <label class="form__label form__label--email"><span>E-mail:*</span>
+              <input class="form__name-input form__name-input--contacts" type="text" name="form__name-input--email" value="" placeholder="kuklachev@gmail.com">
             </label>
-            <label class="form__label">E-mail:*
-              <input class="form__name-input" type="tel" name="form__name-input--phone" value="" placeholder="8 (960) 900-60-90">
+            <label class="form__label form__label--phone"><span>Телефон*</span>
+              <input class="form__name-input form__name-input--contacts" type="tel" name="form__name-input--phone" value="" placeholder="8 (960) 900-60-90">
             </label>
           </fieldset>
 
           <fieldset class="form__fieldset form__fieldset--comment">
-            <legend class="form__header">Комментарий</legend>
-            <textarea class="form__textarea" name="form__textarea" rows="8" cols="30" placeholder="Расскажите обо всех повадках кота">
-            </textarea>
+            <div class="form__header-wrapper form__header-wrapper--comment">
+              <h2 class="form__header">Комментарий</h2>
+              <span class="form__header-line"></span>
+            </div>
+            <textarea class="form__textarea" name="form__textarea" rows="8" cols="30" placeholder="Расскажите обо всех повадках кота"></textarea>
           </fieldset>
 
           <fieldset class="form__fieldset form__fieldset--extra">
-            <legend class="form__header form__header--extra">Дополнительно</legend>
-            <label class="form__label">
-              <input class="form__checkbox" type="checkbox" name="form__checkbox" value="" checked>Сахарозаменитель
+            <div class="form__header-wrapper form__header-wrapper--extra">
+              <h2 class="form__header form__header--extra">Дополнительно</h2>
+              <span class="form__header-line"></span>
+            </div>
+            <input class="form__checkbox-input visually-hidden" id="checkbox-one" type="checkbox" name="form__checkbox" value="" checked>
+            <label class="form__label form__label--checkbox" for="checkbox-one">Сахарозаменитель
             </label>
-            <label class="form__label">
-              <input class="form__checkbox" type="checkbox" name="form__checkbox" value="">Питьевая вода
+            <input class="form__checkbox-input visually-hidden" id="checkbox-two" type="checkbox" name="form__checkbox" value="">
+            <label class="form__label form__label--checkbox" for="checkbox-two">Питьевая вода
             </label>
-            <label class="form__label">
-              <input class="form__checkbox" type="checkbox" name="form__checkbox" value="">Молоко
+            <input class="form__checkbox-input visually-hidden" id="checkbox-three" type="checkbox" name="form__checkbox" value="">
+            <label class="form__label form__label--checkbox" for="checkbox-three">Молоко
             </label>
-            <label class="form__label">
-              <input class="form__checkbox" type="checkbox" name="form__checkbox" value="">Витамины
+            <input class="form__checkbox-input visually-hidden" id="checkbox-four" type="checkbox" name="form__checkbox" value="">
+            <label class="form__label form__label--checkbox" for="checkbox-four">Витамины
             </label>
           </fieldset>
 
@@ -115,7 +123,7 @@
         <section class="contacts contacts--darker">
           <div class="contacts__wrapper">
             <h2 class="visually-hidden">Наши контакты</h2>
-            <b class="contacts__header">Приглашаем <br class="only-mobile">
+            <b class="contacts__header">Приглашаем <br>
               <span></span> к сотрудничеству дилеров!</b>
             <p class="contacts__address">ул. Большая Конюшенная, д. 19/8 <br> Санкт-Петербург</p>
           </div>
@@ -146,8 +154,10 @@
             </li>
           </ul>
           <div class="copyright">
-            <a href="#">HTML Academy</a>
-            <img src="http://placehold.it/27x34" alt="Логотип Академии" width="27" height="34">
+            <a href="https://htmlacademy.ru"><img src="../img/htmlacademy.svg" alt="Логотип Академии" width="27" height="34"></a>
+            <span class="copyright__designer">Дизайн: <br class="copyright__mobile-only"> <a href="https://htmlacademy.ru">HTML Academy</a></span>
+
+            <span class="copyright__creator">Разработка: <a href="https://github.com/AndrewKross">Andrew Kross</a></span>
           </div>
         </div>
 

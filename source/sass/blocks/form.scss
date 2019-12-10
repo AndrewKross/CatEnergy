@@ -2,15 +2,97 @@
   border: none;
   display: flex;
   flex-direction: column;
-  margin: 0 0 15px;
+  margin: 0 0 20px;
   padding: 0;
+  @include mobile-padding;
+}
+
+.form__fieldset--name {
+  padding-bottom: 9px;
+  border-bottom: 1px solid #ededed;
+}
+
+.form__fieldset--radio {
+  padding-bottom: 7px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ededed;
+}
+
+.form__fieldset--contacts {
+  margin-bottom: 16px;
+}
+
+.form__name-input {
+  padding: 15px;
+  width: 100%;
+  border: 1px solid #e6e6e6;
+  margin-left: 15px;
+  text-transform: uppercase;
+  color: $text-color-light;
 }
 
 .form__label {
-  margin-bottom: 15px;
-  @include font ($font-primary, 16px, 18px);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  @include font($font-primary, 16px, 18px);
   color: $text-color-medium;
   text-transform: uppercase;
+  position: relative;
+}
+
+.form__label--radio {
+  padding-left: 46px;
+  height: 30px;
+  width: fit-content;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(205, 205, 205);
+    border-radius: 50%;
+    left: 0;
+  }
+}
+
+.form__radio-input:checked + .form__label--radio::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #68b738;
+  left: 9px;
+}
+
+.form__label span {
+  flex-shrink: 0;
+}
+
+.form__label--email::before {
+  content: "";
+  position: absolute;
+  width: 17px;
+  height: 13px;
+  background: url("../img/icon-mail.svg") no-repeat center;
+  right: 15px;
+}
+
+.form__label--phone::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: url("../img/icon-phone.svg") no-repeat center;
+  right: 15px;
+}
+
+.form__name-input--contacts {
+  padding-right: 45px;
 }
 
 .form__name-input::placeholder {
@@ -18,13 +100,20 @@
 }
 
 .form__header {
-  @include font ($font-primary, 24px, 24px);
-  margin-bottom: 30px;
+  margin: 0;
+  @include font($font-primary, 24px, 24px);
+  flex-shrink: 0;
 }
 
 .form__textarea {
   margin: 0;
   padding: 15px;
+  border: 1px solid #e6e6e6;
+  width: 100%;
+  height: 150px;
+  text-transform: uppercase;
+  color: $text-color-light;
+  @include font($font-primary, 16px, 18px);
 }
 
 .form__fieldset--comment {
@@ -32,15 +121,74 @@
 }
 
 .form__fieldset--extra {
-  margin-bottom: 20px;
+  margin-bottom: 22px;
+}
+
+.form__label--checkbox {
+  margin-bottom: 12px;
+  height: 30px;
+  padding-left: 46px;
+  width: fit-content;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #cfcfcf;
+    left: 0;
+  }
+}
+
+.form__checkbox-input:checked + .form__label--checkbox::after {
+  content: "";
+  position: absolute;
+  width: 21px;
+  height: 16px;
+  background: url("../img/icon-tick.svg") no-repeat center;
+  left: 5px;
 }
 
 .form__submit {
   @include mobile-button;
   border: none;
   padding: 0;
+  margin: 0 auto;
   margin-bottom: 20px;
 }
+
+.form__required {
+  text-align: center;
+  display: block;
+  @include mobile-padding;
+  @include font($font-secondary, 14px, 16px);
+}
+
+.form__header-wrapper {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  margin-bottom: 30px;
+}
+
+.form__header-wrapper--comment,
+.form__header-wrapper--extra {
+  margin-bottom: 35px;
+}
+
+.form__header-line {
+  width: 100%;
+  height: 3px;
+  background-color: #68b738;
+  position: relative;
+  top: 4px;
+  margin-left: 7.5%;
+}
+
+.form__header-line--contacts {
+  top: -9px;
+}
+
 @media (min-width: $tablet-width) {
   .form {
     padding: 0 40px;
@@ -48,7 +196,7 @@
 
   .form__label {
     margin-bottom: 20px;
-    @include font ($font-primary, 20px, 20px);
+    @include font($font-primary, 20px, 20px);
   }
 
   .form__fieldset {
@@ -60,7 +208,7 @@
   }
 
   .form__header {
-    @include font ($font-primary, 36px, 36px);
+    @include font($font-primary, 36px, 36px);
     margin-bottom: 80px;
   }
 
@@ -72,6 +220,7 @@
     margin-bottom: 35px;
   }
 }
+
 @media (min-width: $desktop-width) {
   .form {
     padding: 0;

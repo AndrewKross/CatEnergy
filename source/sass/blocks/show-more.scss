@@ -1,11 +1,17 @@
 .show-more {
+  @include mobile-padding;
   padding-top: 25px;
   padding-bottom: 25px;
+  text-align: center;
 }
 
 .show-more__plus {
-  display: flex;
+  background: url("../img/icon-plus-mobile.svg") no-repeat center;
+  width: 30px;
+  height: 30px;
+  font-size: 0;
   margin-bottom: 25px;
+  border: none;
 }
 
 .show-more__text-block {
@@ -16,18 +22,19 @@
   margin: 0;
   margin-bottom: 10px;
 
-  @include font ($font-primary, 16px, 16px);
+  @include font($font-primary, 16px, 16px);
 }
 
 .show-more__small-header {
-  @include font ($font-primary, 12px, 16px);
+  @include font($font-primary, 12px, 16px);
   color: $text-color-light;
 }
 
 .show-more__show-all {
   @include mobile-button;
+  width: 100%;
 
-  @include font ($font-primary, 16px, 16px);
+  @include font($font-primary, 16px, 16px);
   background-color: #f2f2f2;
   border: none;
   color: $text-color-light;
