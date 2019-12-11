@@ -5,6 +5,7 @@
 
 .example__wrapper {
   @include mobile-padding;
+  position: relative;
 }
 
 .example__header {
@@ -49,7 +50,7 @@
   text-align: center;
 
   background-color: #f2f2f2;
-  @include font($font-primary, 12px, 12px);
+  @include font($font-secondary, 12px, 12px);
   color: $text-color-light;
 }
 
@@ -83,7 +84,6 @@
 
 .example__img {
   margin-bottom: 35px;
-  position: absolute;
   top: 0;
 }
 
@@ -103,14 +103,101 @@
 @media (min-width: $tablet-width) {
   .example {
     padding-top: 50px;
-    @include tablet-padding;
-    min-height: 1080px;
+    padding-bottom: 68px;
     background-color: white;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      height: 462px;
+      width: 100%;
+      background-color: #f2f2f2;
+    }
+  }
+
+  .example__wrapper {
+    @include tablet-padding;
+    margin-bottom: 86px;
   }
 
   .example__header {
     margin-bottom: 70px;
     @include font($font-primary, 60px, 60px);
+  }
+
+  .example__description {
+    margin-bottom: 55px;
+    @include font($font-secondary, 16px, 24px);
+  }
+
+  .example__result {
+    justify-content: flex-start;
+    margin-bottom: 0;
+    width: 366px;
+  }
+
+  .example__result-wrapper {
+    width: 162px;
+    height: 72px;
+  }
+
+  .example__value {
+    width: 100%;
+    @include font($font-primary, 30px, 37px);
+  }
+
+  .example__parametr {
+    width: auto;
+    bottom: -5px;
+    left: 24px;
+    padding: 0 9px;
+    background-color: white;
+    @include font($font-secondary, 14px, 14px);
+  }
+
+  .example__result-wrapper--left .example__parametr {
+    left: 23px;
+  }
+
+  .example__result-wrapper--right .example__parametr {
+    left: 9px;
+  }
+
+  .example__result-wrapper--left {
+    margin-right: 42px;
+  }
+
+  .example__price {
+    position: absolute;
+    right: 3.9%;
+    top: 270px;
+    text-align: right;
+    width: 180px;
+    @include font($font-primary, 20px, 26px);
+  }
+
+  .example__img-wrapper {
+    width: 690px;
+    height: 517px;
+    margin: 0 auto 13px;
+    z-index: 1;
+  }
+
+  .example__img {
+    width: 690px;
+    height: 517px;
+    position: static;
+  }
+
+  .example__before-after {
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    @include font($font-primary, 20px, 20px);
+    position: relative;
+    z-index: 1;
   }
 }
 

@@ -6,7 +6,7 @@
   margin: 0;
   margin-bottom: 35px;
 
-  @include font ($font-primary, 36px, 36px);
+  @include font($font-primary, 36px, 36px);
 }
 
 @media (min-width: $tablet-width) {
@@ -16,9 +16,9 @@
   }
 
   .advantages__header {
-    margin-bottom: 60px;
+    margin-bottom: 70px;
 
-    @include font ($font-primary, 60px, 60px);
+    @include font($font-primary, 60px, 60px);
   }
 }
 

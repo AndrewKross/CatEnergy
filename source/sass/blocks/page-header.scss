@@ -11,6 +11,11 @@
   @include mobile-padding;
 }
 
+.page-header__logo {
+  width: 191px;
+  height: 38px;
+}
+
 @media (min-width: $tablet-width) {
   .page-header {
     min-height: 82px;
@@ -26,6 +31,10 @@
     padding: 0;
   }
 
+  .page-header__logo {
+    width: 173px;
+    height: 58px;
+  }
 }
 
 @media (min-width: $desktop-width) {

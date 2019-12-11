@@ -1,5 +1,15 @@
 .program-select {
   position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    @include size(280px, 270px);
+    background: url("../img/index-can-mobile@1x.png") no-repeat;
+    bottom: 43px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .program-select__background-wrapper {
@@ -29,14 +39,6 @@
   width: 87.5%;
   margin: auto;
   @include font($font-primary);
-
-  &::before {
-    content: "";
-    position: absolute;
-    @include size(280px, 270px);
-    background: url("../img/index-can-mobile@1x.png") no-repeat;
-    bottom: 43px;
-  }
 }
 
 @media (min-width: $tablet-width) {
@@ -47,14 +49,13 @@
       @include size(709px, 609px);
       background: url("../img/index-can-tablet@1x.jpg") no-repeat;
       bottom: 0;
-      left: 30px;
     }
   }
 
   .program-select__background-wrapper {
     @include size(auto, auto);
     margin: 0;
-    padding: 60px 230px 0 120px;
+    padding: 60px 230px 0 15.6%;
     min-height: 180px;
     margin-bottom: 50px;
     text-align: left;
@@ -63,13 +64,14 @@
   }
 
   .program-select__button {
-    margin: 0 0 0 120px;
+    margin: 0 0 0 15.6%;
     position: relative;
     @include size(245px, 52px);
     @include font($font-primary, 20px, 20px);
   }
 
   .program-select__header {
+    width: 425px;
     @include font($font-primary, 60px, 60px);
     color: $text-color-main;
     margin-bottom: 45px;

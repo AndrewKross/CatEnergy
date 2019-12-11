@@ -30,3 +30,31 @@
   font-size: 0;
   background: url("../img/icon-fb.svg") no-repeat center;
 }
+
+@media (min-width: $tablet-width) {
+  .social-links {
+    width: 17.5%;
+    min-height: 64px;
+    padding: 0;
+    border: none;
+  }
+
+  .social-links__item {
+    margin-right: 8.5%;
+  }
+
+  .social-links__item--vk {
+    width: 30px;
+    height: 16px;
+  }
+
+  .social-links__item--instagram {
+    width: 23px;
+    height: 23px;
+  }
+
+  .social-links__item--facebook {
+    width: 14px;
+    height: 28px;
+  }
+}

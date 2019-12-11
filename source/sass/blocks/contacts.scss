@@ -59,6 +59,12 @@
   }
 }
 
+@media (max-width: 767px) {
+  .contacts__tablet-only {
+    display: none;
+  }
+}
+
 @media (min-width: $tablet-width) {
   .contacts__wrapper {
     padding-top: 0;
@@ -70,12 +76,23 @@
     justify-content: space-between;
   }
 
+  .contacts__header {
+    width: 185px;
+    padding-right: 30px;
+    @include font($font-primary, 20px, 25px);
+  }
+
   .contacts__address {
     text-align: right;
     width: 160px;
+    @include font($font-secondary, 16px, 20px);
   }
 
   .contacts__map {
+    height: 400px;
+  }
+
+  .contacts__map-image {
     height: 400px;
   }
 }
