@@ -11,11 +11,11 @@
 @media (min-width: $tablet-width) {
   .catalog {
     @include tablet-padding;
-    padding-top: 65px;
+    padding-top: 60px;
   }
 
   .catalog__header {
-    margin-bottom: 155px;
+    margin-bottom: 160px;
     @include font($font-primary, 60px, 60px);
   }
 }

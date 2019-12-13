@@ -39,8 +39,35 @@
 }
 
 @media (min-width: $tablet-width) {
+  .extra__wrapper {
+    @include tablet-padding;
+  }
+
   .extra-list__item {
-    min-height: 138px;
+    min-height: 140px;
+    border: 1px solid #cdcdcd;
+    border-top: none;
+    padding: 26px 36px 26px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .extra-list__name {
+    @include font($font-primary, 20px, 20px);
+    margin-bottom: 26px;
+    width: 50%;
+  }
+
+  .extra-list__description {
+    @include font($font-secondary, 16px, 20px);
+    width: auto;
+    text-align: right;
+    white-space: nowrap;
+
+    td {
+      width: 94px;
+    }
   }
 }
 

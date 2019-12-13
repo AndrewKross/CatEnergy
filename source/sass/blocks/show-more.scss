@@ -21,12 +21,13 @@
 .show-more__header {
   margin: 0;
   margin-bottom: 10px;
+  text-transform: uppercase;
 
   @include font($font-primary, 16px, 16px);
 }
 
 .show-more__small-header {
-  @include font($font-primary, 12px, 16px);
+  @include font($font-secondary, 12px, 16px);
   color: $text-color-light;
 }
 
@@ -38,4 +39,38 @@
   background-color: #f2f2f2;
   border: none;
   color: $text-color-light;
+}
+
+@media (min-width: $tablet-width) {
+  .show-more {
+    width: 45.76%;
+    padding: 54px 4.95% 40px;
+    border: 1px solid #e6e6e6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .show-more__plus {
+    background: url("../img/icon-plus.svg") no-repeat center;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 50px;
+  }
+
+  .show-more__header {
+    margin-bottom: 25px;
+    padding: 0 40px;
+    @include font($font-primary, 20px, 20px);
+  }
+
+  .show-more__small-header {
+    @include font($font-secondary, 16px, 18px);
+    padding: 0px 40px;
+    display: inline-block;
+  }
+
+  .show-more__show-all {
+    margin-top: auto;
+  }
 }

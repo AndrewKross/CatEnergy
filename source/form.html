@@ -75,7 +75,7 @@
 
           <fieldset class="form__fieldset form__fieldset--contacts">
             <div class="form__header-wrapper">
-              <h2 class="form__header">Контактные данные <br> (владельца кота)</h2>
+              <h2 class="form__header">Контактные данные&nbsp;<br class="form__mobile-only"> (владельца кота)</h2>
               <span class="form__header-line form__header-line--contacts"></span>
             </div>
             <label class="form__label form__label--email"><span>E-mail:*</span>
@@ -99,18 +99,28 @@
               <h2 class="form__header form__header--extra">Дополнительно</h2>
               <span class="form__header-line"></span>
             </div>
-            <input class="form__checkbox-input visually-hidden" id="checkbox-one" type="checkbox" name="form__checkbox" value="" checked>
-            <label class="form__label form__label--checkbox" for="checkbox-one">Сахарозаменитель
-            </label>
-            <input class="form__checkbox-input visually-hidden" id="checkbox-two" type="checkbox" name="form__checkbox" value="">
-            <label class="form__label form__label--checkbox" for="checkbox-two">Питьевая вода
-            </label>
-            <input class="form__checkbox-input visually-hidden" id="checkbox-three" type="checkbox" name="form__checkbox" value="">
-            <label class="form__label form__label--checkbox" for="checkbox-three">Молоко
-            </label>
-            <input class="form__checkbox-input visually-hidden" id="checkbox-four" type="checkbox" name="form__checkbox" value="">
-            <label class="form__label form__label--checkbox" for="checkbox-four">Витамины
-            </label>
+            <ul class="form__extra-list">
+              <li class="form__extra-item">
+                <input class="form__checkbox-input visually-hidden" id="checkbox-one" type="checkbox" name="form__checkbox" value="" checked>
+                <label class="form__label form__label--checkbox" for="checkbox-one">Сахарозаменитель
+                </label>
+              </li>
+              <li class="form__extra-item">
+                <input class="form__checkbox-input visually-hidden" id="checkbox-two" type="checkbox" name="form__checkbox" value="">
+                <label class="form__label form__label--checkbox" for="checkbox-two">Питьевая вода
+                </label>
+              </li>
+              <li class="form__extra-item">
+                <input class="form__checkbox-input visually-hidden" id="checkbox-three" type="checkbox" name="form__checkbox" value="">
+                <label class="form__label form__label--checkbox" for="checkbox-three">Молоко
+                </label>
+              </li>
+              <li class="form__extra-item">
+                <input class="form__checkbox-input visually-hidden" id="checkbox-four" type="checkbox" name="form__checkbox" value="">
+                <label class="form__label form__label--checkbox" for="checkbox-four">Витамины
+                </label>
+              </li>
+            </ul>
           </fieldset>
 
           <input class="form__submit" type="submit" name="form__submit" value="Отправить заявку">
@@ -154,9 +164,8 @@
             </li>
           </ul>
           <div class="copyright">
-            <a href="https://htmlacademy.ru"><img src="img/htmlacademy.svg" alt="Логотип Академии" width="27" height="34"></a>
-            <span class="copyright__designer">Дизайн: <br class="copyright__mobile-only"> <a href="https://htmlacademy.ru">HTML Academy</a></span>
-
+            <a class="copyright__icon" href="https://htmlacademy.ru"><img src="img/htmlacademy.svg" alt="Логотип Академии" width="27" height="34"></a>
+            <span class="copyright__designer">Дизайн:&nbsp;<br class="copyright__mobile-only"> <a href="https://htmlacademy.ru">HTML Academy</a></span>
             <span class="copyright__creator">Разработка: <a href="https://github.com/AndrewKross">Andrew Kross</a></span>
           </div>
         </div>

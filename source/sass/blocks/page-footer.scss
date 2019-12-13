@@ -15,6 +15,11 @@
   margin-bottom: 30px;
 }
 
+.logo-header__image {
+  width: 128px;
+  height: 24px;
+}
+
 @media (min-width: $tablet-width) {
   .page-footer__wrapper {
     min-height: 150px;

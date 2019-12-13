@@ -1,5 +1,6 @@
 .form-section {
   padding: 30px 0;
+  overflow: hidden;
 }
 
 .form-section__header {
@@ -16,25 +17,29 @@
   color: $text-color-main;
   text-transform: uppercase;
 }
+
 @media (min-width: $tablet-width) {
   .form-section {
     @include tablet-padding;
     padding-top: 65px;
-    padding-bottom: 75px;
+    padding-bottom: 72px;
   }
 
   .form-section__header {
-    margin: 0 0 55px;
+    padding: 0;
+    margin: 0 0 60px;
     @include font($font-primary, 60px, 60px);
   }
 
   .form-section__header-small {
     margin: 0 0 70px;
+    padding: 0;
     padding-right: 300px;
-    padding-left: 40px;
+    padding-left: 5.93%;
     @include font($font-primary, 20px, 30px);
   }
 }
+
 @media (min-width: $desktop-width) {
   .form-section {
     @include desktop-padding;
