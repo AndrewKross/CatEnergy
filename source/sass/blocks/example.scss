@@ -9,6 +9,7 @@
 }
 
 .example__header {
+  @include mobile-padding;
   margin: 0;
   margin-bottom: 40px;
   @include font($font-primary, 36px, 36px);
@@ -103,23 +104,13 @@
 @media (min-width: $tablet-width) {
   .example {
     padding-top: 50px;
-    padding-bottom: 68px;
+    padding-bottom: 0;
     background-color: white;
-    position: relative;
-
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      height: 462px;
-      width: 100%;
-      background-color: #f2f2f2;
-    }
   }
 
   .example__wrapper {
     @include tablet-padding;
-    margin-bottom: 86px;
+    margin-bottom: 255px;
   }
 
   .example__header {
@@ -150,7 +141,7 @@
 
   .example__parametr {
     width: auto;
-    bottom: -5px;
+    bottom: -6px;
     left: 24px;
     padding: 0 9px;
     background-color: white;
@@ -172,17 +163,27 @@
   .example__price {
     position: absolute;
     right: 3.9%;
-    top: 270px;
+    top: 140px;
     text-align: right;
     width: 180px;
     @include font($font-primary, 20px, 26px);
   }
 
+  .example__slider-wrapper {
+    height: 462px;
+    position: relative;
+    background-color: #f2f2f2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 67px;
+  }
+
   .example__img-wrapper {
-    width: 690px;
-    height: 517px;
-    margin: 0 auto 13px;
-    z-index: 1;
+    position: absolute;
+    bottom: 114px;
+    width: 100%;
+    height: auto;
   }
 
   .example__img {
@@ -192,20 +193,59 @@
   }
 
   .example__before-after {
-    margin-bottom: 0;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0;
+    margin: 0;
     @include font($font-primary, 20px, 20px);
-    position: relative;
-    z-index: 1;
   }
 }
 
 @media (min-width: $desktop-width) {
   .example {
     padding-top: 0;
-    @include desktop-padding;
     min-height: 590px;
     background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .example__header {
+    margin-bottom: 75px;
+    width: 100%;
+  }
+
+  .example__wrapper {
+    width: 50%;
+    background-color: #f2f2f2;
+    margin-bottom: 0;
+    padding-left: 110px;
+    padding-right: 140px;
+    padding-top: 75px;
+  }
+
+  .example__slider-wrapper {
+    width: 50%;
+    padding-right: 110px;
+  }
+
+  .example__description {
+    margin-bottom: 75px;
+  }
+
+  .example__parametr {
+    background-color: #f2f2f2;
+  }
+
+  .example__result {
+    margin-bottom: 60px;
+  }
+
+  .example__price {
+    position: static;
+    width: auto;
+    text-align: left;
+
+    span {
+      margin-left: 64px;
+    }
   }
 }

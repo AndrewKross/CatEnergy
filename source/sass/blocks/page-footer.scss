@@ -40,3 +40,9 @@
     width: 132px;
   }
 }
+
+@media (min-width: $desktop-width) {
+  .page-footer__wrapper {
+    @include desktop-padding;
+  }
+}

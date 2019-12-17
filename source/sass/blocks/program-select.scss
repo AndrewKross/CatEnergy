@@ -90,8 +90,9 @@
       @include size(552px, 499px);
       background: url("../img/index-can-desktop@1x.png") no-repeat;
       position: absolute;
-      top: 30px;
-      left: 560px;
+      transform: none;
+      top: 29px;
+      left: 562px;
       z-index: 1;
     }
 

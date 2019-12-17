@@ -104,5 +104,11 @@
 
   .contacts__wrapper {
     position: absolute;
+    z-index: 1;
+    background-color: white;
+    left: 110px;
+    top: 95px;
+    width: 570px;
+    height: 201px;
   }
 }

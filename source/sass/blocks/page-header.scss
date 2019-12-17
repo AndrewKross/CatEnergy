@@ -42,4 +42,9 @@
     min-height: 113px;
     @include desktop-padding;
   }
+
+  .page-header__logo {
+    width: 202px;
+    height: 59px;
+  }
 }

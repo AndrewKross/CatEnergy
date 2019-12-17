@@ -37,7 +37,8 @@
   position: absolute;
   left: 8px;
   top: -12px;
-  @include size(35px, 49px);
+  width: 35px;
+  height: 47px;
   background: url("../img/icon-cat-slim.svg") no-repeat;
 }
 
@@ -46,7 +47,8 @@
   position: absolute;
   left: -10px;
   top: 0;
-  @include size(67px, 28px);
+  width: 67px;
+  height: 28px;
   background: url("../img/icon-cat-pro.svg") no-repeat;
 }
 
@@ -66,7 +68,8 @@
 
   &::before {
     content: "";
-    @include size(24px, 11px);
+    width: 24px;
+    height: 11px;
     position: absolute;
     background: url("../img/icon-right-arrow-long.svg") no-repeat;
     right: -36px;
@@ -74,7 +77,7 @@
   }
 }
 
-@media (min-width: $tablet-width) {
+@media (min-width: $tablet-width) and (max-width: $desktop-width) {
   .categories {
     @include tablet-padding;
   }
@@ -105,7 +108,8 @@
     left: auto;
     right: 92px;
     top: 80px;
-    @include size(140px, 194px);
+    width: 140px;
+    height: 194px;
     background: url("../img/icon-cat-slim.svg") no-repeat;
   }
 
@@ -113,7 +117,8 @@
     left: auto;
     right: 28px;
     top: 135px;
-    @include size(268px, 112px);
+    width: 281px;
+    height: 112px;
     background: url("../img/icon-cat-pro.svg") no-repeat;
   }
 
@@ -137,7 +142,8 @@
 
     &::before {
       content: "";
-      @include size(24px, 11px);
+      width: 24px;
+      height: 11px;
       position: absolute;
       background: url("../img/icon-right-arrow-long.svg") no-repeat;
       right: -49px;
@@ -151,5 +157,65 @@
     @include desktop-padding;
     display: flex;
     justify-content: space-between;
+  }
+
+  .categories__block {
+    width: 570px;
+    min-height: 372px;
+    padding: 80px 50px 60px;
+    margin-bottom: 0;
+    position: relative;
+    align-items: flex-start;
+  }
+
+  .categories__header {
+    @include font($font-primary, 36px, 37px);
+    padding: 0;
+    position: static;
+    text-align: center;
+    min-width: 0;
+    margin-left: 164px;
+    margin-bottom: 75px;
+
+    &::before {
+      width: 100px;
+      height: 100px;
+      left: 52px;
+      top: 47px;
+    }
+  }
+
+  .categories__header--fit::after {
+    left: 66px;
+    right: auto;
+    top: 41px;
+    width: 70px;
+    height: 97px;
+    background: url("../img/icon-cat-slim.svg") no-repeat;
+  }
+
+  .categories__header--weight::after {
+    left: 34px;
+    right: auto;
+    top: 69px;
+    width: 134px;
+    height: 56px;
+    background: url("../img/icon-cat-pro.svg") no-repeat;
+  }
+
+  .categories__description {
+    @include font($font-secondary, 16px, 24px);
+    border: none;
+    padding: 0;
+    margin-bottom: 35px;
+  }
+
+  .categories__link {
+    @include font($font-primary, 20px, 20px);
+
+    &::before {
+      right: -47px;
+      top: 5px;
+    }
   }
 }

@@ -83,7 +83,7 @@
     }
   }
 
-  .advantages-list__item:nth-last-child(-n + 3) {
+  .advantages-list__item:nth-last-child(-n + 2) {
     margin-bottom: 55px;
   }
 
@@ -123,8 +123,17 @@
     justify-content: space-between;
   }
 
-  .advantages-list__item {
+  .advantages .advantages-list__item {
     width: 20%;
     min-height: 230px;
+    padding-right: 0;
+    margin-bottom: 0;
+    min-height: 228px;
+  }
+
+  .advantages-list__advantage {
+    &::before {
+      left: 115px;
+    }
   }
 }

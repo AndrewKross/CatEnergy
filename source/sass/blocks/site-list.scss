@@ -25,24 +25,34 @@
   .site-list {
     flex-direction: row;
     justify-content: space-between;
-    padding-bottom: 5px;
+    padding-bottom: 6px;
   }
 
   .site-list__item {
     width: auto;
-    height: 45px;
+    display: flex;
+    align-items: flex-start;
+    height: 35px;
     border-bottom: none;
     @include font($font-primary, 18px, 25px);
   }
 
+  .site-list__item--active {
+    border-bottom: 2px solid #68b738;
+  }
+
   .site-list__link {
-    height: 100%;
+    height: auto;
   }
 }
 
 @media (min-width: $desktop-width) {
   .site-list__item {
     @include font($font-primary, 20px, 25px);
+  }
+
+  .site-list__item--active {
+    border-bottom: 2px solid white;
   }
 
   .site-list--index {
