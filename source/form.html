@@ -50,27 +50,31 @@
         <form class="form-section__form form" action="index.html" method="post">
 
           <fieldset class="form__fieldset form__fieldset--name">
-            <label class="form__label"><span>Имя:*</span>
-              <input class="form__name-input" type="text" name="form__input--name" value="" placeholder="Барсик">
-            </label>
-            <label class="form__label"><span>Вес (кг):*</span>
-              <input class="form__name-input" type="text" name="form__input--weight" value="" placeholder="7">
-            </label>
-            <label class="form__label"><span>Возраст (лет):</span>
-              <input class="form__name-input" type="text" name="form__input--age" value="" placeholder="7">
-            </label>
+            <div class="form__wrapper form__wrapper--name">
+              <label class="form__label"><span>Имя:*</span>
+                <input class="form__name-input" type="text" name="form__input--name" value="" placeholder="Барсик">
+              </label>
+              <label class="form__label"><span>Вес (кг):*</span>
+                <input class="form__name-input" type="text" name="form__input--weight" value="" placeholder="7">
+              </label>
+              <label class="form__label"><span>Возраст (лет):</span>
+                <input class="form__name-input" type="text" name="form__input--age" value="" placeholder="7">
+              </label>
+            </div>
           </fieldset>
 
           <fieldset class="form__fieldset form__fieldset--radio">
-            <input class="form__radio-input visually-hidden" id="radio-one" type="radio" name="form__radio-input" value="" checked>
-            <label class="form__label form__label--radio" for="radio-one">Похудение
-            </label>
-            <input class="form__radio-input  visually-hidden" id="radio-two" type="radio" name="form__radio-input" value="">
-            <label class="form__label form__label--radio" for="radio-two">Набор массы
-            </label>
-            <input class="form__radio-input  visually-hidden" id="radio-three" type="radio" name="form__radio-input" value="">
-            <label class="form__label form__label--radio" for="radio-three">Не знаю (Нужен ваш совет)
-            </label>
+            <div class="form__wrapper form__wrapper--radio">
+              <input class="form__radio-input visually-hidden" id="radio-one" type="radio" name="form__radio-input" value="" checked>
+              <label class="form__label form__label--radio" for="radio-one">Похудение
+              </label>
+              <input class="form__radio-input  visually-hidden" id="radio-two" type="radio" name="form__radio-input" value="">
+              <label class="form__label form__label--radio" for="radio-two">Набор массы
+              </label>
+              <input class="form__radio-input  visually-hidden" id="radio-three" type="radio" name="form__radio-input" value="">
+              <label class="form__label form__label--radio" for="radio-three">Не знаю (Нужен ваш совет)
+              </label>
+            </div>
           </fieldset>
 
           <fieldset class="form__fieldset form__fieldset--contacts">
@@ -78,12 +82,14 @@
               <h2 class="form__header">Контактные данные&nbsp;<br class="form__mobile-only"> (владельца кота)</h2>
               <span class="form__header-line form__header-line--contacts"></span>
             </div>
-            <label class="form__label form__label--email"><span>E-mail:*</span>
-              <input class="form__name-input form__name-input--contacts" type="text" name="form__name-input--email" value="" placeholder="kuklachev@gmail.com">
-            </label>
-            <label class="form__label form__label--phone"><span>Телефон*</span>
-              <input class="form__name-input form__name-input--contacts" type="tel" name="form__name-input--phone" value="" placeholder="8 (960) 900-60-90">
-            </label>
+            <div class="form__wrapper form__wrapper--contacts">
+              <label class="form__label form__label--email"><span>E-mail:*</span>
+                <input class="form__name-input form__name-input--contacts" type="text" name="form__name-input--email" value="" placeholder="kuklachev@gmail.com">
+              </label>
+              <label class="form__label form__label--phone"><span>Телефон*</span>
+                <input class="form__name-input form__name-input--contacts" type="tel" name="form__name-input--phone" value="" placeholder="8 (960) 900-60-90">
+              </label>
+            </div>
           </fieldset>
 
           <fieldset class="form__fieldset form__fieldset--comment">
@@ -153,14 +159,26 @@
           </a>
           <h3 class="visually-hidden">Мы в соцсетях</h3>
           <ul class="page-footer__social-links social-links">
-            <li class="social-links__item social-links__item--vk">
-              <a class="social-links__link" href="#">Vkontakte</a>
+            <li class="social-links__item">
+              <a class="social-links__link social-links__link--vk" href="#">
+                <svg width="22" height="12">
+                  <use xlink:href="img/sprite.svg#icon-vk"></use>
+                </svg>
+                Vkontakte</a>
             </li>
-            <li class="social-links__item social-links__item--instagram">
-              <a class="social-links__link" href="#">Instagram</a>
+            <li class="social-links__item">
+              <a class="social-links__link social-links__link--instagram" href="#">
+                <svg width="16" height="16">
+                  <use xlink:href="img/sprite.svg#icon-insta"></use>
+                </svg>
+                Instagram</a>
             </li>
-            <li class="social-links__item social-links__item--facebook">
-              <a class="social-links__link" href="#">Facebook</a>
+            <li class="social-links__item">
+              <a class="social-links__link social-links__link--facebook" href="#">
+                <svg width="10" height="19">
+                  <use xlink:href="img/sprite.svg#icon-fb"></use>
+                </svg>
+                Facebook</a>
             </li>
           </ul>
           <div class="copyright">

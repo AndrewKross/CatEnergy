@@ -2,16 +2,13 @@
   border-top: 1px solid #cdcdcd;
 }
 
-.extra__wrapper {
-  @include mobile-padding;
-}
-
 .extra-list__name {
   @include font($font-primary, 16px, 16px);
   color: $text-color-medium;
   margin: 0;
   margin-bottom: 15px;
   text-transform: uppercase;
+  overflow-wrap: break-word;
 }
 
 .extra-list__item {
@@ -39,10 +36,6 @@
 }
 
 @media (min-width: $tablet-width) {
-  .extra__wrapper {
-    @include tablet-padding;
-  }
-
   .extra-list__item {
     min-height: 140px;
     border: 1px solid #cdcdcd;
@@ -77,6 +70,32 @@
   }
 
   .extra-list__item {
-    min-height: 71px;
+    min-height: 72px;
+    border-left: none;
+    border-right: none;
+    padding: 15px 0;
+    align-items: center;
+  }
+
+  .extra-list__buy-button {
+    width: 245px;
+  }
+
+  .extra-list__name {
+    margin: 0;
+    width: 325px;
+    padding-right: 30px;
+  }
+
+  .extra-list__description {
+    width: 285px;
+    text-align: left;
+    white-space: nowrap;
+    margin-right: 40px;
+    margin-bottom: 0;
+
+    td {
+      width: auto;
+    }
   }
 }

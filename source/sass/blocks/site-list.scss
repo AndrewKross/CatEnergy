@@ -52,11 +52,15 @@
   }
 
   .site-list__item--active {
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid #68b738;
   }
 
   .site-list--index {
     color: white;
+
+    .site-list__item--active {
+      border-color: white;
+    }
   }
 
   .site-list {

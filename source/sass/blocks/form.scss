@@ -1,10 +1,24 @@
 .form__fieldset {
   border: none;
-  display: flex;
-  flex-direction: column;
   margin: 0 0 20px;
   padding: 0;
   @include mobile-padding;
+}
+
+.form__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form__wrapper--name {
+  min-height: 163px;
+}
+
+.form__wrapper--radio {
+  min-height: 158px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .form__extra-list {
@@ -12,13 +26,12 @@
 }
 
 .form__fieldset--name {
-  padding-bottom: 9px;
-  border-bottom: 1px solid #ededed;
+  margin-bottom: 23px;
 }
 
 .form__fieldset--radio {
-  padding-bottom: 7px;
   margin-bottom: 30px;
+  border-top: 1px solid #ededed;
   border-bottom: 1px solid #ededed;
 }
 
@@ -37,7 +50,6 @@
 }
 
 .form__label {
-  margin-bottom: 14px;
   display: flex;
   align-items: center;
   @include font($font-primary, 16px, 18px);
@@ -76,6 +88,10 @@
 
 .form__label span {
   flex-shrink: 0;
+}
+
+.form__label--email {
+  margin-bottom: 14px;
 }
 
 .form__label--email::before {
@@ -133,12 +149,17 @@
   margin-bottom: 12px;
   height: 30px;
   padding-left: 46px;
+  display: flex;
   width: fit-content;
 }
 
 .form__label--checkbox {
   position: static;
   width: fit-content;
+}
+
+.form__label--email {
+  margin-bottom: 20px;
 }
 
 .form__extra-item {
@@ -209,6 +230,10 @@
     position: relative;
   }
 
+  .form__wrapper--name {
+    min-height: 196px;
+  }
+
   .form__name-input {
     padding: 0 19px;
     height: 52px;
@@ -219,7 +244,6 @@
   }
 
   .form__label {
-    margin-bottom: 20px;
     @include font($font-primary, 20px, 20px);
   }
 
@@ -228,14 +252,17 @@
     margin-bottom: 50px;
   }
 
-  .form__fieldset--radio {
+  .form__wrapper--radio {
     padding: 24px 0 24px 27px;
+    min-height: 196px;
+  }
+
+  .form__fieldset--radio {
     margin-bottom: 75px;
     border: 1px solid #ededed;
   }
 
   .form__label--radio {
-    margin-bottom: 13px;
     height: 40px;
     padding-left: 60px;
 
@@ -342,19 +369,61 @@
   .form {
     padding: 0;
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .form__fieldset--contacts,
+  .form__fieldset--comment {
+    width: 100%;
+    margin-bottom: 65px;
   }
 
   .form__fieldset--name,
   .form__fieldset--radio {
-    display: flex;
-    width: 50%;
+    width: 570px;
+    margin-bottom: 65px;
   }
 
   .form__fieldset--name {
-    float: left;
+    margin-right: 80px;
+  }
+
+  .form__wrapper--contacts {
+    flex-direction: row;
+  }
+
+  .form__label--email,
+  .form__label--phone {
+    margin: 0;
+    width: 570px;
   }
 
   .form__fieldset--extra {
-    margin-bottom: 40px;
+    width: 100%;
+    margin-bottom: 60px;
+  }
+
+  .form__header-wrapper--extra {
+    margin-bottom: 60px;
+  }
+
+  .form__extra-list {
+    justify-content: space-between;
+  }
+
+  .form__extra-list .form__extra-item {
+    width: 245px;
+    margin: 0;
+  }
+
+  .form__submit {
+    width: 568px;
+    height: 52px;
+  }
+
+  .form__required {
+    left: 650px;
   }
 }

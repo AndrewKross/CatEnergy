@@ -3,6 +3,10 @@
   padding-bottom: 35px;
 }
 
+.extra__wrapper {
+  @include mobile-padding;
+}
+
 .extra__header {
   margin: 0;
   @include font($font-primary, 24px, 24px);
@@ -63,14 +67,17 @@
     padding-bottom: 75px;
   }
 
+  .extra__wrapper {
+    @include tablet-padding;
+  }
+
   .extra__header {
     @include font($font-primary, 36px, 36px);
-    padding: 0;
+    padding: 0 40px;
     margin: 0;
     margin-left: 3.65%;
     background-color: white;
-    width: 413px;
-    text-align: center;
+    min-width: 413px;
   }
 
   .extra__header-line {
@@ -110,18 +117,39 @@
 
 @media (min-width: $desktop-width) {
   .extra {
-    @include desktop-padding;
     padding-top: 80px;
     padding-bottom: 85px;
   }
 
   .extra__gift {
-    @include size(245px, 289px);
+    width: 245px;
+    height: 289px;
     margin-top: 0;
+    padding: 185px 40px 40px;
+    background: url("../img/gift-photo-desktop@1x.jpg") no-repeat center, green;
+
+    &::before {
+      left: 96px;
+      transform: none;
+    }
   }
 
   .extra__wrapper {
+    @include desktop-padding;
     display: flex;
     justify-content: space-between;
+  }
+
+  .extra__header {
+    margin-left: 70px;
+  }
+
+  .extra__list {
+    margin-right: 80px;
+    margin-bottom: 0;
+  }
+
+  .extra__gift-text {
+    text-align: center;
   }
 }
