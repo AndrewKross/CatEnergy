@@ -1,120 +1,200 @@
-"use strict";
+/* пути к исходным файлам (src), к готовым файлам (build), а также к тем, за изменениями которых нужно наблюдать (watch) */
+var path = {
+  build: 'build',
+  html: {
+    src: 'src/*.html',
+    build: 'build/'
+  },
+  styles: {
+    src: 'src/scss/style.scss',
+    build: 'build/css/',
+    watch: 'src/scss/**/*.scss'
+  },
+  scripts: {
+    src: 'src/js/',
+    build: 'build/js/',
+    watch: 'src/js/**/*.js'
+  },
+  img: {
+    src: 'src/img/**/*.{png,jpg,svg}',
+    build: 'build/img/'
+  },
+  webp: {
+    src: 'src/img/*.{png,jpg}',
+    build: 'build/img/webp'
+  },
+  svg: 'src/img/svg/sprite/*.svg',
+  fonts: {
+    src: 'src/fonts/**/*.*',
+    build: 'build/fonts/'
+  }
+};
 
-var gulp = require("gulp");
-var plumber = require("gulp-plumber");
-var sourcemap = require("gulp-sourcemaps");
-var sass = require("gulp-sass");
-var postcss = require("gulp-postcss");
-var autoprefixer = require("autoprefixer");
-var server = require("browser-sync").create();
-var del = require("del");
-var gulpcsso = require("gulp-csso");
-var rename = require("gulp-rename");
-var imagemin = require("gulp-imagemin");
-var makeSprite = require("gulp-svgstore");
-var posthtml = require("gulp-posthtml");
-var include = require("posthtml-include");
-var webp = require("gulp-webp");
-var htmlmin = require("gulp-htmlmin");
+const gulp = require('gulp'); // подключение gulp
+const sass = require('gulp-sass'); // плагин для компиляции scss в css
+sass.compiler = require('node-sass');
+const autoprefixer = require('gulp-autoprefixer'); // плагин для автоматического добавления префиксов в css
+const cleanCSS = require('gulp-clean-css'); // плагин для минификации css
+const concat = require('gulp-concat'); // плагин для обьединения файлов
+const uglify = require('gulp-uglify'); // плагин для минификации js
+const rename = require("gulp-rename"); // плагин для переименования файлов
+const del = require('del'); // плагин для удаления файлов и каталогов
+const browserSync = require('browser-sync').create(); // плагин для создания локального сервера
+const imagemin = require('gulp-imagemin'); // плагин для минификации изображений
+const webp = require('gulp-webp'); // плагин для конвертации png & jpg в webp
+const cheerio = require('gulp-cheerio'); // плагин для удаления атрибутов svg
+const cache = require('gulp-cache'); // Подключаем библиотеку кеширования
+const replace = require('gulp-replace');
+const svgstore = require('gulp-svgstore'); // плагин для создания svg спрайтов
+const svgmin = require("gulp-svgmin"); // плагин для минификации svg
+const gulpPosthtml = require('gulp-posthtml');
+const include = require('posthtml-include'); // подключает файлы в html
+const ghpages = require('gh-pages');
+const htmlmin = require("gulp-htmlmin");
 
-gulp.task("clean", function() {
-  return del("build");
-});
 
-gulp.task("copy", function() {
-      return gulp.src([
-          "source/fonts/**/*.{woff,woff2}",
-          "source/js/**",
-          "source/img/**"
-        ], {
-          base: "source"
-        })
-        .pipe(gulp.dest("build"));
-});
-
-gulp.task("sprite", function() {
-  return gulp.src([
-    "source/img/**/icon-fb.svg",
-    "source/img/**/icon-insta.svg",
-    "source/img/**/icon-vk.svg",
-    "source/img/**/htmlacademy.svg",
-    "source/img/**/icon-gift.svg",
-    "source/img/**/icon-phone.svg",
-    "source/img/**/icon-mail.svg"])
-  .pipe(makeSprite({
-    inlineSvg: true
-  }))
-  .pipe(rename("sprite.svg"))
-  .pipe(gulp.dest("build/img"));
-});
-
-gulp.task("html", function() {
-  return gulp.src("source/*.html")
-  .pipe(posthtml([
-    include()
+function html() {
+  return gulp.src(path.html.src) // путь к html файлам
+    .pipe(gulpPosthtml([
+      include()
     ]))
-  .pipe(htmlmin({ collapseWhitespace: true }))
-  .pipe(gulp.dest("build"));
-});
+	.pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest(path.build))
+    .pipe(browserSync.stream());
+}
 
-gulp.task("minImages", function() {
-  return gulp.src("build/img/**/*.{jpg, png, svg}")
-    .pipe(imagemin([
-      imagemin.optipng({ optimisationLevel: 3 }),
-      imagemin.jpegtran({ progressive: true }),
+// сборка стилей
+function styles() {
+  return gulp.src(path.styles.src) // путь к главному файлу SCSS
+    .pipe(sass.sync().on('error', sass.logError)) // полученный контент прогоняем через обработчик SASS
+    .pipe(autoprefixer({ // добавляем префиксы
+      overrideBrowserslist: ['>0.1%'],
+      cascade: false
+    }))
+    .pipe(gulp.dest(path.styles.build)) //обработанный контент выгружаем в папку build/css
+    .pipe(cleanCSS({ // минифицируем css
+      level: 2
+    }))
+    .pipe(rename({ // переименовываем файл
+      suffix: '.min' //добавляем суффикс .min
+    }))
+    .pipe(gulp.dest(path.styles.build)) // выгружаем в папку build/css
+    .pipe(browserSync.stream());
+}
+
+const jsFiles = [
+  path.scripts.src + 'picturefill.js',
+  path.scripts.src + 'main.js'
+];
+
+// сборка скриптов
+function scripts() {
+  return gulp.src(jsFiles) // указываем откуда брать js файлы
+    .pipe(concat('main.js')) // объединяем js файлы в один
+    .pipe(gulp.dest(path.scripts.build)) // выгружаем в папку build/js
+    .pipe(uglify({ // минифицируем js
+      toplevel: true
+    }))
+    .pipe(rename({
+      suffix: '.min' //добавляем суффикс .min
+    }))
+    .pipe(gulp.dest(path.scripts.build)) // выгружаем в папку build/js
+    .pipe(browserSync.stream());
+}
+
+// оптимизация (сжатие) изображение
+function images() {
+  return gulp.src(path.img.src) // путь ко всем изображениям
+    .pipe(cache(imagemin([ // минифицируем изображения
+      imagemin.optipng({
+        optimizationLevel: 3 // безопасное сжатие
+      }),
+      imagemin.jpegtran({
+        progressive: true
+      }),
       imagemin.svgo()
-    ]))
-});
+    ])))	
+    .pipe(gulp.dest(path.img.build)); // выгружаем минифицированные изображения в build/img
+}
 
-gulp.task("createWebp", function() {
-  return gulp.src(["source/img/**/fish-*.{png,jpg}",
-    "source/img/**/chicken-*.{png,jpg}",
-    "source/img/**/rice-*.{png,jpg}",
-    "source/img/**/buckwheat-*.{png,jpg}"])
-    .pipe(webp({quality: 90}))
-    .pipe(gulp.dest("build/img"));
-});
+// создаем версии изображений в формате WebP
+function webpImg() {
+  return gulp.src(path.webp.src)
+    .pipe(webp({
+      quality: 90
+    }))
+    .pipe(gulp.dest(path.webp.build));
+}
 
-gulp.task("css", function() {
-  return gulp.src("source/sass/style.scss")
-    .pipe(plumber())
-    .pipe(sourcemap.init())
-    .pipe(sass())
-    .pipe(postcss([
-      autoprefixer()
-    ]))
-    .pipe(gulpcsso())
-    .pipe(rename("style.min.css"))
-    .pipe(sourcemap.write("."))
-    .pipe(gulp.dest("build/css"))
-    .pipe(server.stream());
-});
+function svg() {
+  return gulp.src(path.svg) // указываем путь к svg файлам
+    .pipe(svgmin({
+      plugins: [{
+        removeViewBox: false
+      }]
+    })) // минимизируем svg перед созданием спрайта
+    .pipe(cheerio({
+      run: function ($) {
+        $('[fill]').removeAttr('fill');
+        $('[style]').removeAttr('style');
+      },
+      parserOptions: {
+        xmlMode: true
+      }
+    }))
+    // .pipe(replace('&gt;', '>'))
+    .pipe(svgstore({ // создаем спрайт
+      inlineSvg: true // уберет из файла все не нужное (doctype, xml и прочее)
+    }))
+    .pipe(rename('sprite.svg')) // перименовываем svg
+    .pipe(gulp.dest(path.img.build + 'svg/sprite')); // выгружаем в папку build/img/svg/sprite
+}
 
-gulp.task("server", function() {
-  server.init({
-    server: "build/",
-    notify: false,
-    open: true,
-    cors: true,
-    ui: false
+function watch() {
+  browserSync.init({
+    server: {
+      baseDir: "build/"
+    },
+    // tunnel: true
   });
+  gulp.watch(path.html.src, html); // Наблюдение за html файлами
+  gulp.watch(path.styles.watch, styles).on('change', browserSync.reload); // Наблюдение за scss файлами
+  gulp.watch(path.scripts.watch, scripts); // Наблюдение за js файлами
+}
 
-  gulp.watch("source/sass/**/*.{scss,sass}", gulp.series("css", "refresh"));
-  gulp.watch("source/*.html", gulp.series("html", "refresh"));
-});
+function copy() {
+  return gulp.src([
+      path.fonts.src
+    ], {
+      base: "src"
+    })
+    .pipe(gulp.dest(path.build));
+}
 
-gulp.task("refresh", function(done) {
-  server.reload();
-  done();
-});
+function clean() {
+  return del(path.build);
+}
 
-gulp.task("build", gulp.series(
-  "clean",
-  "copy",
-  "minImages",
-  "createWebp",
-  "sprite",
-  "css",
-  "html"
-  ));
-gulp.task("start", gulp.series("build", "server"));
+function clearCache() {
+  return cache.clearAll();
+}
+
+gulp.task('copy', copy)
+gulp.task('html', html);
+gulp.task('styles', styles);
+gulp.task('scripts', scripts);
+gulp.task('images', images);
+gulp.task('webpImg', webpImg);
+gulp.task('svg', svg);
+gulp.task('watch', watch);
+gulp.task('clean', clean);
+gulp.task('clearCache', clearCache);
+
+gulp.task('build', gulp.series(clean, copy, webpImg, images, svg, html,
+  gulp.parallel(styles, scripts)));
+// gulp.series -  запускает задачи последовательно
+// gulp.parallel -  запускает задачи ассинхронно (две задачи выполняются паралельно)
+
+gulp.task('dev', gulp.series('build', 'watch'));
+
+ghpages.publish('build', function(err) {});

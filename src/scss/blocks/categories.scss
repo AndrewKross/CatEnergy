@@ -1,0 +1,221 @@
+.categories {
+  @include mobile-padding;
+}
+
+.categories__block {
+  padding: 35px 20px 25px 6.25%;
+  margin-bottom: 20px;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.categories__header {
+  margin: 0 0 30px;
+  @include font($font-primary, 24px, 24px);
+  text-transform: uppercase;
+  position: relative;
+  padding-left: 70px;
+  min-width: 240px;
+
+  &::before {
+    content: "";
+    border-radius: 50%;
+    background-color: #68b738;
+    position: absolute;
+    left: 0;
+    top: -12px;
+    width: 50px;
+    height: 50px;
+    z-index: 0;
+  }
+}
+
+.categories__header--fit::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: -12px;
+  width: 35px;
+  height: 47px;
+  background: url("../img/svg/icon-cat-slim.svg") no-repeat;
+}
+
+.categories__header--weight::after {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 0;
+  width: 67px;
+  height: 28px;
+  background: url("../img/svg/icon-cat-pro.svg") no-repeat;
+}
+
+.categories__description {
+  margin: 0 0 20px;
+  padding: 0 0 20px;
+  border-bottom: 1px solid #d9d9d9;
+  @include font($font-secondary);
+  color: $text-color-light;
+}
+
+.categories__link {
+  @include font($font-primary, 16px, 16px);
+  text-transform: uppercase;
+  align-self: flex-start;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 24px;
+    height: 11px;
+    position: absolute;
+    background: url("../img/svg/icon-right-arrow-long.svg") no-repeat;
+    right: -36px;
+    top: 2px;
+  }
+}
+
+@media (min-width: $tablet-width) and (max-width: $desktop-width) {
+  .categories {
+    @include tablet-padding;
+  }
+
+  .categories__block {
+    padding: 80px 6.8% 60px;
+    min-height: 372px;
+    margin-bottom: 30px;
+    position: relative;
+    align-items: flex-start;
+  }
+
+  .categories__header {
+    @include font($font-primary, 36px, 37px);
+    padding: 0;
+    position: static;
+
+    &::before {
+      right: 62px;
+      left: auto;
+      top: 92px;
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  .categories__header--fit::after {
+    left: auto;
+    right: 92px;
+    top: 80px;
+    width: 140px;
+    height: 194px;
+    background: url("../img/svg/icon-cat-slim.svg") no-repeat;
+  }
+
+  .categories__header--weight::after {
+    left: auto;
+    right: 28px;
+    top: 135px;
+    width: 281px;
+    height: 112px;
+    background: url("../img/svg/icon-cat-pro.svg") no-repeat;
+  }
+
+  .categories__block--fit {
+    padding-right: 280px;
+  }
+
+  .categories__block--weight {
+    padding-right: 310px;
+  }
+
+  .categories__description {
+    @include font($font-secondary, 16px, 24px);
+    border: none;
+    padding: 0;
+    margin-bottom: 60px;
+  }
+
+  .categories__link {
+    @include font($font-primary, 20px, 20px);
+
+    &::before {
+      content: "";
+      width: 24px;
+      height: 11px;
+      position: absolute;
+      background: url("../img/svg/icon-right-arrow-long.svg") no-repeat;
+      right: -49px;
+      top: 5px;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .categories {
+    @include desktop-padding;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .categories__block {
+    width: 570px;
+    min-height: 372px;
+    padding: 80px 50px 60px;
+    margin-bottom: 0;
+    position: relative;
+    align-items: flex-start;
+  }
+
+  .categories__header {
+    @include font($font-primary, 36px, 37px);
+    padding: 0;
+    position: static;
+    text-align: center;
+    min-width: 0;
+    margin-left: 164px;
+    margin-bottom: 75px;
+
+    &::before {
+      width: 100px;
+      height: 100px;
+      left: 52px;
+      top: 47px;
+    }
+  }
+
+  .categories__header--fit::after {
+    left: 66px;
+    right: auto;
+    top: 41px;
+    width: 70px;
+    height: 97px;
+    background: url("../img/svg/icon-cat-slim.svg") no-repeat;
+  }
+
+  .categories__header--weight::after {
+    left: 34px;
+    right: auto;
+    top: 69px;
+    width: 134px;
+    height: 56px;
+    background: url("../img/svg/icon-cat-pro.svg") no-repeat;
+  }
+
+  .categories__description {
+    @include font($font-secondary, 16px, 24px);
+    border: none;
+    padding: 0;
+    margin-bottom: 35px;
+  }
+
+  .categories__link {
+    @include font($font-primary, 20px, 20px);
+
+    &::before {
+      right: -47px;
+      top: 5px;
+    }
+  }
+}
