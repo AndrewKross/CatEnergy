@@ -1,6 +1,7 @@
 {
   "name": "cat-energy",
   "version": "1.0.0",
+  "homepage": "https://andrewkross.github.io/CatEnergy",
   "description": "Проект Cat Energy",
   "main": "gulpfile.js",
   "scripts": {
