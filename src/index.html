@@ -111,14 +111,22 @@
         <div class="example__slider-wrapper">
           <div class="example__img-wrapper">
             <picture>
-              <source media="(min-width: 1440px)" srcset="img/before-desktop@1x.png">
-              <source media="(min-width: 768px)" srcset="img/before-tablet@1x.png">
-              <img class="example__img example__img--before" src="img/before-mobile@1x.png" alt="Было">
+              <source type="image/webp" media="(min-width: 1440px)" srcset="img/before-desktop@1x.webp 1x, img/before-desktop@2x.webp 2x">
+              <source type="image/webp" media="(min-width: 768px)" srcset="img/before-tablet@1x.webp 1x, img/before-tablet@2x.webp 2x">
+              <source type="image/webp" srcset="img/before-mobile@1x.webp 1x, img/before-mobile@2x.webp 2x">
+
+              <source media="(min-width: 1440px)" srcset="img/before-desktop@1x.png 1x, img/before-desktop@2x.png 2x">
+              <source media="(min-width: 768px)" srcset="img/before-tablet@1x.png 1x, img/before-tablet@2x.png 2x">
+              <img class="example__img example__img--before" src="img/before-mobile@1x.png" srcset="img/before-mobile@2x.png 2x" alt="Было">
             </picture>
             <picture>
-              <source media="(min-width: 1440px)" srcset="img/after-desktop@1x.png">
-              <source media="(min-width: 768px)" srcset="img/after-tablet@1x.png">
-              <img class="example__img example__img--after" src="img/after-mobile@1x.png" alt="Было">
+              <source type="image/webp" media="(min-width: 1440px)" srcset="img/after-desktop@1x.webp 1x, img/after-desktop@2x.webp 2x">
+              <source type="image/webp" media="(min-width: 768px)" srcset="img/after-tablet@1x.webp 1x, img/after-tablet@2x.webp 2x">
+              <source type="image/webp" srcset="img/after-mobile@1x.webp 1x, img/after-mobile@2x.webp 2x">
+
+              <source media="(min-width: 1440px)" srcset="img/after-desktop@1x.png 1x, img/after-desktop@2x.png 2x">
+              <source media="(min-width: 768px)" srcset="img/after-tablet@1x.png 1x, img/after-tablet@2x.png 2x">
+              <img class="example__img example__img--after" src="img/after-mobile@1x.png" srcset="img/after-mobile@2x.png 2x" alt="Было">
             </picture>
           </div>
           <p class="example__before-after">Было/Стало</p>
@@ -137,9 +145,13 @@
           <h3 class="visually-hidden">Как к нам проехать</h3>
           <div class="contacts__map">
             <picture>
-              <source media="(min-width: 769px)" srcset="img/bg-map-desktop@1x.png">
-              <source media="(min-width: 321px)" srcset="img/bg-map-tablet@1x.png">
-              <img class="contacts__map-image" src="img/bg-map-mobile@1x.png" alt="Как к нам проехать">
+              <source type="image/webp" media="(min-width: 769px)" srcset="img/bg-map-desktop@1x.webp 1x, img/bg-map-desktop@2x.webp 2x">
+              <source type="image/webp" media="(min-width: 321px)" srcset="img/bg-map-tablet@1x.webp 1x, img/bg-map-tablet@2x.webp 2x">
+              <source type="image/webp" srcset="img/bg-map-mobile@1x.webp 1x, img/bg-map-mobile@2x.webp 2x">
+
+              <source media="(min-width: 769px)" srcset="img/bg-map-desktop@1x.png 1x, img/bg-map-desktop@2x.png 2x">
+              <source media="(min-width: 321px)" srcset="img/bg-map-tablet@1x.png 1x, img/bg-map-tablet@2x.png 2x">
+              <img class="contacts__map-image" src="img/bg-map-mobile@1x.png" srcset="img/bg-map-mobile@2x.png 2x" alt="Как к нам проехать">
             </picture>
           </div>
         </section>

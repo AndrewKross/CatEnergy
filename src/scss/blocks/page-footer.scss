@@ -4,11 +4,20 @@
   align-items: center;
   padding-top: 40px;
   @include mobile-padding;
-
   background-color: #f2f2f2;
 }
 
-.page-footer__logo-header {
+.page-footer__logo-header[href] {
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.page-footer__logo-wrapper {
   margin-bottom: 30px;
 }
 
@@ -29,10 +38,7 @@
   }
 
   .page-footer__logo-wrapper {
-    width: 20%;
-  }
-
-  .page-footer__logo-header {
+    width: 30%;
     margin: 0;
   }
 

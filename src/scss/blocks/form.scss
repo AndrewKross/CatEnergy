@@ -19,6 +19,7 @@
   min-height: 158px;
   padding-top: 20px;
   padding-bottom: 20px;
+  position: relative;
 }
 
 .form__extra-list {
@@ -47,6 +48,20 @@
   margin-left: 15px;
   text-transform: uppercase;
   color: $text-color-light;
+
+  &:invalid {
+    outline: none;
+    border: 2px solid #ff8282;
+  }
+
+  &:hover {
+    border-color: #cdcdcd;
+  }
+
+  &:focus {
+    outline: none;
+    border: 2px solid #444444;
+  }
 }
 
 .form__label {
@@ -73,6 +88,18 @@
     border-color: rgb(205, 205, 205);
     border-radius: 50%;
     left: 0;
+  }
+
+  &:hover::before {
+    border-color: #bcbcbc;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  &:active::before {
+    opacity: 0.3;
   }
 }
 
@@ -108,8 +135,28 @@
   right: 15px;
 }
 
-.form__name-input--contacts {
+.form__name-input--email {
   padding-right: 45px;
+
+  &:invalid + .form__icon-mail {
+    fill: #ff8282;
+  }
+
+  &:focus + .form__icon-mail {
+    fill: #68b738;
+  }
+}
+
+.form__name-input--phone {
+  padding-right: 45px;
+
+  &:invalid + .form__icon-phone {
+    fill: #ff8282;
+  }
+
+  &:focus + .form__icon-phone {
+    fill: #68b738;
+  }
 }
 
 .form__name-input::placeholder {
@@ -152,6 +199,18 @@
 .form__label--checkbox {
   position: static;
   width: fit-content;
+
+  &:hover::before {
+    border-color: #bababa;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  &:active::before {
+    opacity: 0.3;
+  }
 }
 
 .form__label--email {

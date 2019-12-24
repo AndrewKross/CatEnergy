@@ -22,6 +22,14 @@
 
 .social-links__icon {
   fill: #666666;
+
+  &:hover {
+    fill: #68b738;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 }
 
 .social-links__icon-vk {

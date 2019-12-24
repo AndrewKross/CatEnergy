@@ -20,8 +20,15 @@ var path = {
     build: 'build/img/'
   },
   webp: {
-    src: 'src/img/*.{png,jpg}',
-    build: 'build/img/webp'
+   /* src: 'src/img/*.{png,jpg}', */
+   src: ["src/img/**/fish-*.{png,jpg}",
+    "src/img/**/chicken-*.{png,jpg}",
+    "src/img/**/rice-*.{png,jpg}",
+    "src/img/**/buckwheat-*.{png,jpg}",
+	"src/img/**/bg-map-*.{png,jpg}",
+	"src/img/**/after-*.{png,jpg}",
+	"src/img/**/before-*.{png,jpg}"],
+    build: 'build/img'
   },
   svg: 'src/img/svg/sprite/*.svg',
   fonts: {

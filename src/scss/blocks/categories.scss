@@ -72,8 +72,21 @@
     height: 11px;
     position: absolute;
     background: url("../img/svg/icon-right-arrow-long.svg") no-repeat;
-    right: -36px;
+    left: 95px;
     top: 2px;
+  }
+
+  &:hover::before {
+    width: 33px;
+    background: url("../img/svg/icon-right-arrow-verylong.svg") no-repeat;
+  }
+
+  &:active::before {
+    opacity: 0.3;
+  }
+
+  &:active {
+    opacity: 0.3;
   }
 }
 
@@ -141,12 +154,7 @@
     @include font($font-primary, 20px, 20px);
 
     &::before {
-      content: "";
-      width: 24px;
-      height: 11px;
-      position: absolute;
-      background: url("../img/svg/icon-right-arrow-long.svg") no-repeat;
-      right: -49px;
+      left: 125px;
       top: 5px;
     }
   }
@@ -214,7 +222,7 @@
     @include font($font-primary, 20px, 20px);
 
     &::before {
-      right: -47px;
+      left: 131px;
       top: 5px;
     }
   }

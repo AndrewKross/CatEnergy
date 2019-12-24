@@ -56,10 +56,10 @@
           <fieldset class="form__fieldset form__fieldset--name">
             <div class="form__wrapper form__wrapper--name">
               <label class="form__label"><span>Имя:*</span>
-                <input class="form__name-input" type="text" name="form__input--name" value="" placeholder="Барсик">
+                <input class="form__name-input" type="text" name="form__input--name" value="" placeholder="Барсик" required>
               </label>
               <label class="form__label"><span>Вес (кг):*</span>
-                <input class="form__name-input" type="text" name="form__input--weight" value="" placeholder="7">
+                <input class="form__name-input" type="text" name="form__input--weight" value="" placeholder="7" required>
               </label>
               <label class="form__label"><span>Возраст (лет):</span>
                 <input class="form__name-input" type="text" name="form__input--age" value="" placeholder="7">
@@ -89,17 +89,17 @@
             <div class="form__wrapper form__wrapper--contacts">
               <label class="form__label form__label--email">
                 <span>E-mail:*</span>
+                <input class="form__name-input form__name-input--email" type="text" name="form__name-input--email" value="" placeholder="kuklachev@gmail.com" required>
                 <svg class="form__icon-mail" width="17" height="13">
                   <use xlink:href="#icon-mail"></use>
                 </svg>
-                <input class="form__name-input form__name-input--contacts" type="text" name="form__name-input--email" value="" placeholder="kuklachev@gmail.com">
               </label>
               <label class="form__label form__label--phone">
                 <span>Телефон*</span>
+                <input class="form__name-input form__name-input--phone" type="tel" name="form__name-input--phone" value="" placeholder="8 (960) 900-60-90" required>
                 <svg class="form__icon-phone" width="20" height="20">
                   <use xlink:href="#icon-phone"></use>
                 </svg>
-                <input class="form__name-input form__name-input--contacts" type="tel" name="form__name-input--phone" value="" placeholder="8 (960) 900-60-90">
               </label>
             </div>
           </fieldset>
@@ -158,9 +158,9 @@
           <h3 class="visually-hidden">Как к нам проехать</h3>
           <div class="contacts__map">
             <picture>
-              <source media="(min-width: 769px)" srcset="img/bg-map-desktop@1x.png">
-              <source media="(min-width: 321px)" srcset="img/bg-map-tablet@1x.png">
-              <img class="contacts__map-image" src="img/bg-map-mobile@1x.png" alt="Как к нам проехать">
+              <source media="(min-width: 769px)" srcset="img/bg-map-desktop@1x.png 1x, img/bg-map-desktop@2x.png 2x">
+              <source media="(min-width: 321px)" srcset="img/bg-map-tablet@1x.png 1x, img/bg-map-tablet@2x.png 2x">
+              <img class="contacts__map-image" src="img/bg-map-mobile@1x.png" srcset="img/bg-map-mobile@2x.png 2x" alt="Как к нам проехать">
             </picture>
           </div>
         </section>
