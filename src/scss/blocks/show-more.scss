@@ -51,14 +51,12 @@
 
 @media (min-width: $tablet-width) {
   .show-more {
-    width: 45.76%;
     min-height: 432px;
     padding: 54px 4.95% 40px;
     border: 1px solid #e6e6e6;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 140px;
   }
 
   .show-more__plus {
@@ -87,7 +85,6 @@
 
 @media (min-width: $desktop-width) {
   .show-more {
-    width: 245px;
     min-height: 430px;
     padding: 54px 37px 39px;
   }

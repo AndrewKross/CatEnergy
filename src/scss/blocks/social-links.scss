@@ -49,10 +49,12 @@
 
 @media (min-width: $tablet-width) {
   .social-links {
-    width: 17.5%;
+    min-width: 140px;
     min-height: 64px;
     padding: 0;
     border: none;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .social-links__icon-vk {
@@ -71,9 +73,10 @@
   }
 }
 
-@media (min-width: $tablet-width) {
+@media (min-width: $desktop-width) {
   .social-links {
     width: 124px;
+    justify-content: space-between;
   }
 
   .social-links__link {

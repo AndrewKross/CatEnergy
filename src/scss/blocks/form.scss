@@ -93,14 +93,6 @@
   &:hover::before {
     border-color: #bcbcbc;
   }
-
-  &:active {
-    opacity: 0.3;
-  }
-
-  &:active::before {
-    opacity: 0.3;
-  }
 }
 
 .form__radio-input:checked + .form__label--radio::after {
@@ -202,14 +194,6 @@
 
   &:hover::before {
     border-color: #bababa;
-  }
-
-  &:active {
-    opacity: 0.3;
-  }
-
-  &:active::before {
-    opacity: 0.3;
   }
 }
 
