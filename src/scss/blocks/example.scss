@@ -93,12 +93,47 @@
 }
 
 .example__before-after {
-  text-transform: uppercase;
-  text-align: center;
   margin: 0;
   padding-top: 35px;
   padding-bottom: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.example__btn {
+  text-transform: uppercase;
+  text-align: center;
+  background: none;
+  border: none;
   @include font($font-primary, 16px, 16px);
+  padding: 0;
+  margin: 0 18px 0 18px;
+  cursor: pointer;
+}
+
+.example__slider-block {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #cdcdcd;
+  border-radius: 5px;
+  background-color: white;
+  width: 84px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+}
+
+.example__switcher {
+  width: 35px;
+  height: 6px;
+  background-color: #68b738;
+  border-radius: 3px;
+  margin-left: 0;
+}
+
+.example__switcher--active {
+  margin-left: auto;
 }
 
 @media (min-width: $tablet-width) {
@@ -172,7 +207,9 @@
   .example__slider-wrapper {
     height: 462px;
     position: relative;
-    background-color: #f2f2f2;
+    background: linear-gradient(90deg, rgb(242, 242, 242) 0%,
+        rgb(242, 242, 242) 50%, rgb(234, 234, 234) 50%,
+        rgb(234, 234, 234) 100%);
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -187,15 +224,95 @@
   }
 
   .example__img {
-    width: 690px;
+    object-fit: cover;
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    top: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .example__img--before {
+    width: 677px;
+    height: 499px;
+    display: block;
+    object-position: center;
+    right: -27px;
+  }
+
+  .example__img--after {
+    width: 545px;
     height: 517px;
-    position: static;
+    display: block;
+    object-position: center;
+    right: 14px;
+  }
+
+  .example__btn {
+    padding: 0 0 7px;
+    margin: 0;
+    @include font($font-primary, 20px, 20px);
+    border-bottom: dotted 1px #bebebe;
+    position: relative;
+    top: 3px;
+  }
+
+  .example__btn:hover {
+    border-bottom: solid 1px #989898;
+  }
+
+  .example__slider-block {
+    width: 428px;
+    height: 6px;
+    margin: 0 22px;
+    border-radius: 3px;
+    background-color: #dcdcdc;
+    border: none;
+    position: relative;
   }
 
   .example__before-after {
+    align-items: center;
+    z-index: 2;
     padding: 0;
-    margin: 0;
-    @include font($font-primary, 20px, 20px);
+  }
+
+  .example__switcher {
+    width: 34px;
+    height: 34px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(205, 205, 205);
+    border-radius: 50%;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.15);
+    background-color: white;
+    position: absolute;
+    cursor: pointer;
+    left: 199px;
+  }
+
+  .example__switcher:hover {
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .example__switcher:active {
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(104, 183, 56);
+    box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.3);
+  }
+
+  .example__switcher::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: #68b738;
+    position: absolute;
+    margin: 50% 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
   }
 }
 
@@ -225,6 +342,57 @@
   .example__slider-wrapper {
     width: 50%;
     padding-right: 110px;
+    justify-content: flex-end;
+    background: linear-gradient(90deg, rgb(242, 242, 242) 0%,
+        rgb(242, 242, 242) 50%, rgb(234, 234, 234) 50%,
+        rgb(234, 234, 234) 100%);
+  }
+
+  .example__img-wrapper {
+    position: absolute;
+    bottom: 114px;
+    width: 720px;
+    height: 517px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .example__img {
+    object-fit: cover;
+    position: static;
+    bottom: 0;
+    top: auto;
+    left: auto;
+    transform: none;
+  }
+
+  .example__before-after {
+    position: relative;
+    left: 36px;
+  }
+
+  .example__img--before {
+    width: 620px;
+    height: 499px;
+    object-position: left;
+  }
+
+  .example__img--after {
+    width: 545px;
+    height: 517px;
+    object-position: right;
+    margin-left: auto;
+  }
+
+  .example__picture {
+    position: relative;
+    left: 110px;
+    width: 50%;
+  }
+
+  .example__switcher {
+    left: 200px;
   }
 
   .example__description {

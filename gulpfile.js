@@ -20,14 +20,15 @@ var path = {
     build: 'build/img/'
   },
   webp: {
-   /* src: 'src/img/*.{png,jpg}', */
-   src: ["src/img/**/fish-*.{png,jpg}",
-    "src/img/**/chicken-*.{png,jpg}",
-    "src/img/**/rice-*.{png,jpg}",
-    "src/img/**/buckwheat-*.{png,jpg}",
-	"src/img/**/bg-map-*.{png,jpg}",
-	"src/img/**/after-*.{png,jpg}",
-	"src/img/**/before-*.{png,jpg}"],
+    /* src: 'src/img/*.{png,jpg}', */
+    src: ["src/img/**/fish-*.{png,jpg}",
+      "src/img/**/chicken-*.{png,jpg}",
+      "src/img/**/rice-*.{png,jpg}",
+      "src/img/**/buckwheat-*.{png,jpg}",
+      "src/img/**/bg-map-*.{png,jpg}",
+      "src/img/**/after-*.{png,jpg}",
+      "src/img/**/before-*.{png,jpg}"
+    ],
     build: 'build/img'
   },
   svg: 'src/img/svg/sprite/*.svg',
@@ -43,7 +44,7 @@ sass.compiler = require('node-sass');
 const autoprefixer = require('gulp-autoprefixer'); // плагин для автоматического добавления префиксов в css
 const cleanCSS = require('gulp-clean-css'); // плагин для минификации css
 const concat = require('gulp-concat'); // плагин для обьединения файлов
-const uglify = require('gulp-uglify'); // плагин для минификации js
+// const uglify = require('gulp-uglify'); // плагин для минификации js
 const rename = require("gulp-rename"); // плагин для переименования файлов
 const del = require('del'); // плагин для удаления файлов и каталогов
 const browserSync = require('browser-sync').create(); // плагин для создания локального сервера
@@ -65,7 +66,9 @@ function html() {
     .pipe(gulpPosthtml([
       include()
     ]))
-	.pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(htmlmin({
+      collapseWhitespace: true
+    }))
     .pipe(gulp.dest(path.build))
     .pipe(browserSync.stream());
 }
@@ -99,12 +102,13 @@ function scripts() {
   return gulp.src(jsFiles) // указываем откуда брать js файлы
     .pipe(concat('main.js')) // объединяем js файлы в один
     .pipe(gulp.dest(path.scripts.build)) // выгружаем в папку build/js
-    .pipe(uglify({ // минифицируем js
+    /* .pipe(uglify({ // минифицируем js
       toplevel: true
     }))
     .pipe(rename({
       suffix: '.min' //добавляем суффикс .min
     }))
+    */
     .pipe(gulp.dest(path.scripts.build)) // выгружаем в папку build/js
     .pipe(browserSync.stream());
 }
@@ -120,7 +124,7 @@ function images() {
         progressive: true
       }),
       imagemin.svgo()
-    ])))	
+    ])))
     .pipe(gulp.dest(path.img.build)); // выгружаем минифицированные изображения в build/img
 }
 
@@ -205,4 +209,4 @@ gulp.task('build', gulp.series(clean, copy, webpImg, images, svg, html,
 
 gulp.task('dev', gulp.series('build', 'watch'));
 
-ghpages.publish('build', function(err) {});
+ghpages.publish('build', function (err) {});
