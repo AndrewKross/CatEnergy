@@ -5,8 +5,7 @@
   const LEFT_MOUSE_BUTTON = 0;
   const SLIDER_X_MIN = 0;
   const SLIDER_X_MAX = 400;
-  const CAT_BEFORE_WIDTH = 666;
-  const CAT_AFTER_WIDTH = 690;
+  const TABLET_WIDTH = 768;
 
   let beforeBtn = document.querySelector('.example__btn--before');
   let afterBtn = document.querySelector('.example__btn--after');
@@ -20,13 +19,23 @@
     if (evt.target === beforeBtn) {
       switcher.classList.remove('example__switcher--active');
       switcher.style.left = 0;
-      colorizeBackground(0);
-      slideCats(0);
+      if (screen.width >= TABLET_WIDTH) {
+        colorizeBackground(0);
+        slideCats(0);
+      } else {
+        imgBefore.style.display = 'block';
+        imgAfter.style.display = 'none';
+      }
     } else {
       switcher.classList.add('example__switcher--active');
       switcher.style.left = SLIDER_X_MAX + 'px';
-      colorizeBackground(400);
-      slideCats(400);
+      if (screen.width >= TABLET_WIDTH) {
+        colorizeBackground(400);
+        slideCats(400);
+      } else {
+        imgBefore.style.display = 'none';
+        imgAfter.style.display = 'block';
+      }
     }
   }
 
@@ -44,7 +53,7 @@
   }
 
   function dragSlider(evt) {
-    if (evt.button === LEFT_MOUSE_BUTTON) {
+    if (evt.button === LEFT_MOUSE_BUTTON && screen.width >= TABLET_WIDTH) {
       evt.preventDefault();
 
       let startCoordsX = evt.clientX;
